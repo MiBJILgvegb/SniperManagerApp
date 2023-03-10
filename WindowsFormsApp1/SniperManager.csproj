@@ -1,0 +1,458 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{EF04DEB1-4423-400C-9CF2-F8FBCCBD3C48}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>SniperManagerApp</RootNamespace>
+    <AssemblyName>SniperManagerApp</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <LangVersion>8.0</LangVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>x64</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Steamworks.NET">
+      <HintPath>I:\SteamLibrary\steamapps\common\TEKKEN 7\Tekken-7-Player-Displayer\Tekken-7-Player-Displayer-1.4.3\Tekken-7-Player-Displayer\lib\Steamworks.NET.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CharacterInfoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CharacterInfoForm.Designer.cs">
+      <DependentUpon>CharacterInfoForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormToGui.cs" />
+    <Compile Include="Gui.cs" />
+    <Compile Include="iniFiles.cs" />
+    <Compile Include="ManualInfoEdit.cs" />
+    <Compile Include="pathForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="pathForm.Designer.cs">
+      <DependentUpon>pathForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainWindow.Designer.cs">
+      <DependentUpon>MainWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PlayerList.cs" />
+    <Compile Include="PlayerLobbyInfo.cs" />
+    <Compile Include="Pointers.cs" />
+    <Compile Include="PopUpMessage.cs" />
+    <Compile Include="ProcessMemory.cs" />
+    <Compile Include="ProcessWindow.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="PrograssBar.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="ShowTargetsList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ShowTargetsList.Designer.cs">
+      <DependentUpon>ShowTargetsList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SteamURL.cs" />
+    <Compile Include="SteamworksAPI.cs" />
+    <Compile Include="AddTargetsList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddTargetsList.Designer.cs">
+      <DependentUpon>AddTargetsList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tekken.cs" />
+    <EmbeddedResource Include="CharacterInfoForm.resx">
+      <DependentUpon>CharacterInfoForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="pathForm.resx">
+      <DependentUpon>pathForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainWindow.resx">
+      <DependentUpon>MainWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddTargetsList.resx">
+      <DependentUpon>AddTargetsList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ShowTargetsList.resx">
+      <DependentUpon>ShowTargetsList.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 и x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1st Dan.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Akuma.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Alisa.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Anna.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Armor-King.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Asuka.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Bob.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Bryan.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Claudio.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Devil-jin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Dragunov.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Eddy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Eliza.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Fahkumram.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Feng.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Ganryu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Geese.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Gigas.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Heihachi.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Hwoarang.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Jack-7.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Jin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Josie.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Julia.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Katarina.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Kazumi.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Kazuya.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\King.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Kuma.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Kunimitsu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Lars.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Law.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Lee.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Lei.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Leo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Leroy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Lidia.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Lili.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Lucky-Chloe.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Marduk.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Master-Raven.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Miguel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\na.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Negan.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Nina.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Noctis.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Panda.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Paul.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Shaheen.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Steve.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Xiaoyu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Yoshimitsu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Zafina.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\2nd Dan.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\3rd Dan.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Brawler.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Byakko.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Destroyer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Divine Ruler.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Emperor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Eternal Ruler.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Expert.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Fighter.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Fujin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Genbu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Grand master.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Initiate.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Juggernaut.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Marauder.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Mentor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Mighty Ruler.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Overlord.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Raijin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Revered Ruler.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Ryujin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Savior.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Seiryu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Suzaku.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Tekken God.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Tekken King.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TGP.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TTG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Usurper.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Vanguard.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Vanquisher.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Vindicator.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Warrior.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Yaksa.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TGO.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\100px-Tekken_7_cover.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="lib\Steamworks.NET.dll" />
+    <Content Include="lib\steam_api64.dll" />
+    <None Include="Resources\icons8-проводник-windows-20.png" />
+    <None Include="Resources\icons8-проводник-windows-48.png" />
+    <None Include="Resources\none.png" />
+    <None Include="Resources\lose.png" />
+    <None Include="Resources\win.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Toolkit.Uwp.Notifications">
+      <Version>7.1.3</Version>
+    </PackageReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
