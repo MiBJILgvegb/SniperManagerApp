@@ -14,6 +14,9 @@
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
     <IsWebBootstrapper>false</IsWebBootstrapper>
+    <TargetFrameworkProfile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -28,9 +31,6 @@
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
-    <TargetFrameworkProfile />
-    <NuGetPackageImportStamp>
-    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>x64</PlatformTarget>
@@ -79,6 +79,7 @@
     </Compile>
     <Compile Include="FormToGui.cs" />
     <Compile Include="Gui.cs" />
+    <Compile Include="HaradaConverter.cs" />
     <Compile Include="iniFiles.cs" />
     <Compile Include="ManualInfoEdit.cs" />
     <Compile Include="pathForm.cs">
@@ -122,6 +123,7 @@
       <DependentUpon>AddTargetsList.cs</DependentUpon>
     </Compile>
     <Compile Include="Tekken.cs" />
+    <Compile Include="ucrtbase.cs" />
     <EmbeddedResource Include="CharacterInfoForm.resx">
       <DependentUpon>CharacterInfoForm.cs</DependentUpon>
     </EmbeddedResource>

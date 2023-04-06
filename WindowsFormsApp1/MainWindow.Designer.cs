@@ -30,15 +30,15 @@
         {
             System.Windows.Forms.Button btnSave;
             System.Windows.Forms.Button btnLoad;
-            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem7 = new System.Windows.Forms.ListViewItem(new string[] {
             ""}, -1, System.Drawing.Color.Empty, System.Drawing.Color.Empty, new System.Drawing.Font("Microsoft Sans Serif", 1F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204))));
-            System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem8 = new System.Windows.Forms.ListViewItem(new string[] {
             ""}, -1, System.Drawing.Color.Empty, System.Drawing.Color.Empty, new System.Drawing.Font("Microsoft Sans Serif", 1F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204))));
-            System.Windows.Forms.ListViewItem listViewItem3 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem9 = new System.Windows.Forms.ListViewItem(new string[] {
             ""}, -1, System.Drawing.Color.Empty, System.Drawing.Color.Empty, new System.Drawing.Font("Microsoft Sans Serif", 1F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204))));
-            System.Windows.Forms.ListViewItem listViewItem4 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem10 = new System.Windows.Forms.ListViewItem(new string[] {
             ""}, -1, System.Drawing.Color.Empty, System.Drawing.Color.Empty, new System.Drawing.Font("Microsoft Sans Serif", 1F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204))));
-            System.Windows.Forms.ListViewItem listViewItem5 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem6 = new System.Windows.Forms.ListViewItem(new string[] {
             ""}, -1, System.Drawing.Color.Empty, System.Drawing.Color.Empty, new System.Drawing.Font("Microsoft Sans Serif", 1F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204))));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.tsmiSetteings = new System.Windows.Forms.ToolStripMenuItem();
@@ -53,6 +53,7 @@
             this.tsmiExit = new System.Windows.Forms.ToolStripMenuItem();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tpSave = new System.Windows.Forms.TabPage();
+            this.btnT7Start = new System.Windows.Forms.Button();
             this.lvRanksSave = new System.Windows.Forms.ListView();
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.cbRankFilterSave = new System.Windows.Forms.ComboBox();
@@ -83,7 +84,6 @@
             this.gbCharacterInfo = new System.Windows.Forms.GroupBox();
             this.cbManualMemoryELOLine = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.cbManualMemoryWinstreak = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.groupBox9 = new System.Windows.Forms.GroupBox();
             this.rbLastGames10 = new System.Windows.Forms.RadioButton();
@@ -105,6 +105,16 @@
             this.rbLastGames5 = new System.Windows.Forms.RadioButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.rbLastGames1 = new System.Windows.Forms.RadioButton();
+            this.pbLastGames10 = new System.Windows.Forms.PictureBox();
+            this.pbLastGames9 = new System.Windows.Forms.PictureBox();
+            this.pbLastGames8 = new System.Windows.Forms.PictureBox();
+            this.pbLastGames7 = new System.Windows.Forms.PictureBox();
+            this.pbLastGames6 = new System.Windows.Forms.PictureBox();
+            this.pbLastGames5 = new System.Windows.Forms.PictureBox();
+            this.pbLastGames4 = new System.Windows.Forms.PictureBox();
+            this.pbLastGames3 = new System.Windows.Forms.PictureBox();
+            this.pbLastGames2 = new System.Windows.Forms.PictureBox();
+            this.pbLastGames1 = new System.Windows.Forms.PictureBox();
             this.chbLastGames10 = new System.Windows.Forms.CheckBox();
             this.chbLastGames9 = new System.Windows.Forms.CheckBox();
             this.chbLastGames8 = new System.Windows.Forms.CheckBox();
@@ -116,7 +126,6 @@
             this.chbLastGames2 = new System.Windows.Forms.CheckBox();
             this.chbLastGames1 = new System.Windows.Forms.CheckBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.cbManualMemoryCurrentWins = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.cbManualMemoryRankFilter = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -128,17 +137,8 @@
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.bT7Preset = new System.Windows.Forms.Button();
             this.pbMain = new System.Windows.Forms.ProgressBar();
-            this.btnT7Start = new System.Windows.Forms.Button();
-            this.pbLastGames10 = new System.Windows.Forms.PictureBox();
-            this.pbLastGames9 = new System.Windows.Forms.PictureBox();
-            this.pbLastGames8 = new System.Windows.Forms.PictureBox();
-            this.pbLastGames7 = new System.Windows.Forms.PictureBox();
-            this.pbLastGames6 = new System.Windows.Forms.PictureBox();
-            this.pbLastGames5 = new System.Windows.Forms.PictureBox();
-            this.pbLastGames4 = new System.Windows.Forms.PictureBox();
-            this.pbLastGames3 = new System.Windows.Forms.PictureBox();
-            this.pbLastGames2 = new System.Windows.Forms.PictureBox();
-            this.pbLastGames1 = new System.Windows.Forms.PictureBox();
+            this.tbManualMemoryCurrentWins = new System.Windows.Forms.TextBox();
+            this.tbManualMemoryWinstreak = new System.Windows.Forms.TextBox();
             btnSave = new System.Windows.Forms.Button();
             btnLoad = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
@@ -159,7 +159,6 @@
             this.groupBox2.SuspendLayout();
             this.groupBox8.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            this.gbPlayerInfo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbLastGames10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbLastGames9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbLastGames8)).BeginInit();
@@ -170,6 +169,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbLastGames3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbLastGames2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbLastGames1)).BeginInit();
+            this.gbPlayerInfo.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnSave
@@ -324,6 +324,18 @@
             this.tpSave.Text = "1. Сохранить";
             this.tpSave.UseVisualStyleBackColor = true;
             // 
+            // btnT7Start
+            // 
+            this.btnT7Start.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnT7Start.BackgroundImage = global::SniperManagerApp.Properties.Resources._100px_Tekken_7_cover;
+            this.btnT7Start.Location = new System.Drawing.Point(287, 33);
+            this.btnT7Start.Margin = new System.Windows.Forms.Padding(0);
+            this.btnT7Start.Name = "btnT7Start";
+            this.btnT7Start.Size = new System.Drawing.Size(104, 150);
+            this.btnT7Start.TabIndex = 6;
+            this.btnT7Start.UseVisualStyleBackColor = true;
+            this.btnT7Start.Click += new System.EventHandler(this.btnT7Start_Click);
+            // 
             // lvRanksSave
             // 
             this.lvRanksSave.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -336,7 +348,7 @@
             this.lvRanksSave.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None;
             this.lvRanksSave.HideSelection = false;
             this.lvRanksSave.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem1});
+            listViewItem7});
             this.lvRanksSave.Location = new System.Drawing.Point(396, 30);
             this.lvRanksSave.Margin = new System.Windows.Forms.Padding(0);
             this.lvRanksSave.MultiSelect = false;
@@ -375,7 +387,7 @@
             this.lvCharactersSave.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None;
             this.lvCharactersSave.HideSelection = false;
             this.lvCharactersSave.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem2});
+            listViewItem8});
             this.lvCharactersSave.Location = new System.Drawing.Point(5, 30);
             this.lvCharactersSave.Margin = new System.Windows.Forms.Padding(0);
             this.lvCharactersSave.MultiSelect = false;
@@ -430,7 +442,7 @@
             this.lvRanksLoad.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None;
             this.lvRanksLoad.HideSelection = false;
             this.lvRanksLoad.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem3});
+            listViewItem9});
             this.lvRanksLoad.Location = new System.Drawing.Point(396, 30);
             this.lvRanksLoad.Margin = new System.Windows.Forms.Padding(0);
             this.lvRanksLoad.MultiSelect = false;
@@ -469,7 +481,7 @@
             this.lvCharactersLoad.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None;
             this.lvCharactersLoad.HideSelection = false;
             this.lvCharactersLoad.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem4});
+            listViewItem10});
             this.lvCharactersLoad.Location = new System.Drawing.Point(5, 30);
             this.lvCharactersLoad.Margin = new System.Windows.Forms.Padding(0);
             this.lvCharactersLoad.MultiSelect = false;
@@ -649,9 +661,10 @@
             // 
             this.gbCharacterInfo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.gbCharacterInfo.Controls.Add(this.tbManualMemoryWinstreak);
+            this.gbCharacterInfo.Controls.Add(this.tbManualMemoryCurrentWins);
             this.gbCharacterInfo.Controls.Add(this.cbManualMemoryELOLine);
             this.gbCharacterInfo.Controls.Add(this.label5);
-            this.gbCharacterInfo.Controls.Add(this.cbManualMemoryWinstreak);
             this.gbCharacterInfo.Controls.Add(this.label4);
             this.gbCharacterInfo.Controls.Add(this.groupBox9);
             this.gbCharacterInfo.Controls.Add(this.groupBox10);
@@ -684,7 +697,6 @@
             this.gbCharacterInfo.Controls.Add(this.chbLastGames2);
             this.gbCharacterInfo.Controls.Add(this.chbLastGames1);
             this.gbCharacterInfo.Controls.Add(this.label3);
-            this.gbCharacterInfo.Controls.Add(this.cbManualMemoryCurrentWins);
             this.gbCharacterInfo.Controls.Add(this.label2);
             this.gbCharacterInfo.Controls.Add(this.cbManualMemoryRankFilter);
             this.gbCharacterInfo.Controls.Add(this.label1);
@@ -719,15 +731,6 @@
             this.label5.TabIndex = 56;
             this.label5.Text = "Полоса PTS";
             // 
-            // cbManualMemoryWinstreak
-            // 
-            this.cbManualMemoryWinstreak.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.cbManualMemoryWinstreak.FormattingEnabled = true;
-            this.cbManualMemoryWinstreak.Location = new System.Drawing.Point(123, 74);
-            this.cbManualMemoryWinstreak.Name = "cbManualMemoryWinstreak";
-            this.cbManualMemoryWinstreak.Size = new System.Drawing.Size(121, 21);
-            this.cbManualMemoryWinstreak.TabIndex = 55;
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -740,7 +743,7 @@
             // groupBox9
             // 
             this.groupBox9.Controls.Add(this.rbLastGames10);
-            this.groupBox9.Location = new System.Drawing.Point(192, 176);
+            this.groupBox9.Location = new System.Drawing.Point(195, 152);
             this.groupBox9.Margin = new System.Windows.Forms.Padding(0);
             this.groupBox9.Name = "groupBox9";
             this.groupBox9.Padding = new System.Windows.Forms.Padding(0);
@@ -765,7 +768,7 @@
             // groupBox10
             // 
             this.groupBox10.Controls.Add(this.rbLastGames9);
-            this.groupBox10.Location = new System.Drawing.Point(175, 176);
+            this.groupBox10.Location = new System.Drawing.Point(178, 152);
             this.groupBox10.Margin = new System.Windows.Forms.Padding(0);
             this.groupBox10.Name = "groupBox10";
             this.groupBox10.Padding = new System.Windows.Forms.Padding(0);
@@ -790,7 +793,7 @@
             // groupBox5
             // 
             this.groupBox5.Controls.Add(this.rbLastGames8);
-            this.groupBox5.Location = new System.Drawing.Point(158, 176);
+            this.groupBox5.Location = new System.Drawing.Point(161, 152);
             this.groupBox5.Margin = new System.Windows.Forms.Padding(0);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Padding = new System.Windows.Forms.Padding(0);
@@ -815,7 +818,7 @@
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.rbLastGames4);
-            this.groupBox3.Location = new System.Drawing.Point(89, 176);
+            this.groupBox3.Location = new System.Drawing.Point(92, 152);
             this.groupBox3.Margin = new System.Windows.Forms.Padding(0);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Padding = new System.Windows.Forms.Padding(0);
@@ -840,7 +843,7 @@
             // groupBox6
             // 
             this.groupBox6.Controls.Add(this.rbLastGames7);
-            this.groupBox6.Location = new System.Drawing.Point(141, 176);
+            this.groupBox6.Location = new System.Drawing.Point(144, 152);
             this.groupBox6.Margin = new System.Windows.Forms.Padding(0);
             this.groupBox6.Name = "groupBox6";
             this.groupBox6.Padding = new System.Windows.Forms.Padding(0);
@@ -865,7 +868,7 @@
             // groupBox4
             // 
             this.groupBox4.Controls.Add(this.rbLastGames3);
-            this.groupBox4.Location = new System.Drawing.Point(72, 176);
+            this.groupBox4.Location = new System.Drawing.Point(75, 152);
             this.groupBox4.Margin = new System.Windows.Forms.Padding(0);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Padding = new System.Windows.Forms.Padding(0);
@@ -890,7 +893,7 @@
             // groupBox7
             // 
             this.groupBox7.Controls.Add(this.rbLastGames6);
-            this.groupBox7.Location = new System.Drawing.Point(124, 176);
+            this.groupBox7.Location = new System.Drawing.Point(127, 152);
             this.groupBox7.Margin = new System.Windows.Forms.Padding(0);
             this.groupBox7.Name = "groupBox7";
             this.groupBox7.Padding = new System.Windows.Forms.Padding(0);
@@ -915,7 +918,7 @@
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.rbLastGames2);
-            this.groupBox2.Location = new System.Drawing.Point(55, 176);
+            this.groupBox2.Location = new System.Drawing.Point(58, 152);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(0);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(0);
@@ -940,7 +943,7 @@
             // groupBox8
             // 
             this.groupBox8.Controls.Add(this.rbLastGames5);
-            this.groupBox8.Location = new System.Drawing.Point(107, 176);
+            this.groupBox8.Location = new System.Drawing.Point(110, 152);
             this.groupBox8.Margin = new System.Windows.Forms.Padding(0);
             this.groupBox8.Name = "groupBox8";
             this.groupBox8.Padding = new System.Windows.Forms.Padding(0);
@@ -965,7 +968,7 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.rbLastGames1);
-            this.groupBox1.Location = new System.Drawing.Point(38, 176);
+            this.groupBox1.Location = new System.Drawing.Point(41, 152);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(0);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(0);
@@ -987,10 +990,91 @@
             this.rbLastGames1.CheckedChanged += new System.EventHandler(this.rbLastGames_CheckedChanged);
             this.rbLastGames1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.rbLastGames_MouseUp);
             // 
+            // pbLastGames10
+            // 
+            this.pbLastGames10.Location = new System.Drawing.Point(229, 199);
+            this.pbLastGames10.Name = "pbLastGames10";
+            this.pbLastGames10.Size = new System.Drawing.Size(18, 17);
+            this.pbLastGames10.TabIndex = 39;
+            this.pbLastGames10.TabStop = false;
+            // 
+            // pbLastGames9
+            // 
+            this.pbLastGames9.Location = new System.Drawing.Point(205, 199);
+            this.pbLastGames9.Name = "pbLastGames9";
+            this.pbLastGames9.Size = new System.Drawing.Size(18, 17);
+            this.pbLastGames9.TabIndex = 38;
+            this.pbLastGames9.TabStop = false;
+            // 
+            // pbLastGames8
+            // 
+            this.pbLastGames8.Location = new System.Drawing.Point(181, 199);
+            this.pbLastGames8.Name = "pbLastGames8";
+            this.pbLastGames8.Size = new System.Drawing.Size(18, 17);
+            this.pbLastGames8.TabIndex = 37;
+            this.pbLastGames8.TabStop = false;
+            // 
+            // pbLastGames7
+            // 
+            this.pbLastGames7.Location = new System.Drawing.Point(157, 199);
+            this.pbLastGames7.Name = "pbLastGames7";
+            this.pbLastGames7.Size = new System.Drawing.Size(18, 17);
+            this.pbLastGames7.TabIndex = 36;
+            this.pbLastGames7.TabStop = false;
+            // 
+            // pbLastGames6
+            // 
+            this.pbLastGames6.Location = new System.Drawing.Point(133, 199);
+            this.pbLastGames6.Name = "pbLastGames6";
+            this.pbLastGames6.Size = new System.Drawing.Size(18, 17);
+            this.pbLastGames6.TabIndex = 35;
+            this.pbLastGames6.TabStop = false;
+            // 
+            // pbLastGames5
+            // 
+            this.pbLastGames5.Location = new System.Drawing.Point(109, 199);
+            this.pbLastGames5.Name = "pbLastGames5";
+            this.pbLastGames5.Size = new System.Drawing.Size(18, 17);
+            this.pbLastGames5.TabIndex = 34;
+            this.pbLastGames5.TabStop = false;
+            // 
+            // pbLastGames4
+            // 
+            this.pbLastGames4.Location = new System.Drawing.Point(85, 199);
+            this.pbLastGames4.Name = "pbLastGames4";
+            this.pbLastGames4.Size = new System.Drawing.Size(18, 17);
+            this.pbLastGames4.TabIndex = 33;
+            this.pbLastGames4.TabStop = false;
+            // 
+            // pbLastGames3
+            // 
+            this.pbLastGames3.Location = new System.Drawing.Point(61, 199);
+            this.pbLastGames3.Name = "pbLastGames3";
+            this.pbLastGames3.Size = new System.Drawing.Size(18, 17);
+            this.pbLastGames3.TabIndex = 32;
+            this.pbLastGames3.TabStop = false;
+            // 
+            // pbLastGames2
+            // 
+            this.pbLastGames2.Location = new System.Drawing.Point(37, 199);
+            this.pbLastGames2.Name = "pbLastGames2";
+            this.pbLastGames2.Size = new System.Drawing.Size(18, 17);
+            this.pbLastGames2.TabIndex = 31;
+            this.pbLastGames2.TabStop = false;
+            // 
+            // pbLastGames1
+            // 
+            this.pbLastGames1.InitialImage = null;
+            this.pbLastGames1.Location = new System.Drawing.Point(13, 199);
+            this.pbLastGames1.Name = "pbLastGames1";
+            this.pbLastGames1.Size = new System.Drawing.Size(18, 17);
+            this.pbLastGames1.TabIndex = 30;
+            this.pbLastGames1.TabStop = false;
+            // 
             // chbLastGames10
             // 
             this.chbLastGames10.AutoSize = true;
-            this.chbLastGames10.Location = new System.Drawing.Point(194, 203);
+            this.chbLastGames10.Location = new System.Drawing.Point(197, 179);
             this.chbLastGames10.Name = "chbLastGames10";
             this.chbLastGames10.Size = new System.Drawing.Size(15, 14);
             this.chbLastGames10.TabIndex = 29;
@@ -1000,7 +1084,7 @@
             // chbLastGames9
             // 
             this.chbLastGames9.AutoSize = true;
-            this.chbLastGames9.Location = new System.Drawing.Point(177, 203);
+            this.chbLastGames9.Location = new System.Drawing.Point(180, 179);
             this.chbLastGames9.Name = "chbLastGames9";
             this.chbLastGames9.Size = new System.Drawing.Size(15, 14);
             this.chbLastGames9.TabIndex = 28;
@@ -1010,7 +1094,7 @@
             // chbLastGames8
             // 
             this.chbLastGames8.AutoSize = true;
-            this.chbLastGames8.Location = new System.Drawing.Point(159, 203);
+            this.chbLastGames8.Location = new System.Drawing.Point(162, 179);
             this.chbLastGames8.Name = "chbLastGames8";
             this.chbLastGames8.Size = new System.Drawing.Size(15, 14);
             this.chbLastGames8.TabIndex = 27;
@@ -1020,7 +1104,7 @@
             // chbLastGames7
             // 
             this.chbLastGames7.AutoSize = true;
-            this.chbLastGames7.Location = new System.Drawing.Point(142, 203);
+            this.chbLastGames7.Location = new System.Drawing.Point(145, 179);
             this.chbLastGames7.Name = "chbLastGames7";
             this.chbLastGames7.Size = new System.Drawing.Size(15, 14);
             this.chbLastGames7.TabIndex = 26;
@@ -1030,7 +1114,7 @@
             // chbLastGames6
             // 
             this.chbLastGames6.AutoSize = true;
-            this.chbLastGames6.Location = new System.Drawing.Point(126, 203);
+            this.chbLastGames6.Location = new System.Drawing.Point(129, 179);
             this.chbLastGames6.Name = "chbLastGames6";
             this.chbLastGames6.Size = new System.Drawing.Size(15, 14);
             this.chbLastGames6.TabIndex = 25;
@@ -1040,7 +1124,7 @@
             // chbLastGames5
             // 
             this.chbLastGames5.AutoSize = true;
-            this.chbLastGames5.Location = new System.Drawing.Point(109, 203);
+            this.chbLastGames5.Location = new System.Drawing.Point(112, 179);
             this.chbLastGames5.Name = "chbLastGames5";
             this.chbLastGames5.Size = new System.Drawing.Size(15, 14);
             this.chbLastGames5.TabIndex = 24;
@@ -1050,7 +1134,7 @@
             // chbLastGames4
             // 
             this.chbLastGames4.AutoSize = true;
-            this.chbLastGames4.Location = new System.Drawing.Point(91, 203);
+            this.chbLastGames4.Location = new System.Drawing.Point(94, 179);
             this.chbLastGames4.Name = "chbLastGames4";
             this.chbLastGames4.Size = new System.Drawing.Size(15, 14);
             this.chbLastGames4.TabIndex = 23;
@@ -1060,7 +1144,7 @@
             // chbLastGames3
             // 
             this.chbLastGames3.AutoSize = true;
-            this.chbLastGames3.Location = new System.Drawing.Point(74, 203);
+            this.chbLastGames3.Location = new System.Drawing.Point(77, 179);
             this.chbLastGames3.Name = "chbLastGames3";
             this.chbLastGames3.Size = new System.Drawing.Size(15, 14);
             this.chbLastGames3.TabIndex = 22;
@@ -1070,7 +1154,7 @@
             // chbLastGames2
             // 
             this.chbLastGames2.AutoSize = true;
-            this.chbLastGames2.Location = new System.Drawing.Point(56, 203);
+            this.chbLastGames2.Location = new System.Drawing.Point(59, 179);
             this.chbLastGames2.Name = "chbLastGames2";
             this.chbLastGames2.Size = new System.Drawing.Size(15, 14);
             this.chbLastGames2.TabIndex = 21;
@@ -1080,7 +1164,7 @@
             // chbLastGames1
             // 
             this.chbLastGames1.AutoSize = true;
-            this.chbLastGames1.Location = new System.Drawing.Point(38, 203);
+            this.chbLastGames1.Location = new System.Drawing.Point(41, 179);
             this.chbLastGames1.Name = "chbLastGames1";
             this.chbLastGames1.Size = new System.Drawing.Size(15, 14);
             this.chbLastGames1.TabIndex = 20;
@@ -1090,20 +1174,11 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(74, 163);
+            this.label3.Location = new System.Drawing.Point(77, 139);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(98, 13);
             this.label3.TabIndex = 9;
             this.label3.Text = "Последние 10 игр";
-            // 
-            // cbManualMemoryCurrentWins
-            // 
-            this.cbManualMemoryCurrentWins.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.cbManualMemoryCurrentWins.FormattingEnabled = true;
-            this.cbManualMemoryCurrentWins.Location = new System.Drawing.Point(123, 47);
-            this.cbManualMemoryCurrentWins.Name = "cbManualMemoryCurrentWins";
-            this.cbManualMemoryCurrentWins.Size = new System.Drawing.Size(121, 21);
-            this.cbManualMemoryCurrentWins.TabIndex = 8;
             // 
             // label2
             // 
@@ -1189,7 +1264,7 @@
             this.lvManualMemoryCharactersList.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None;
             this.lvManualMemoryCharactersList.HideSelection = false;
             this.lvManualMemoryCharactersList.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem5});
+            listViewItem6});
             this.lvManualMemoryCharactersList.Location = new System.Drawing.Point(0, 0);
             this.lvManualMemoryCharactersList.Margin = new System.Windows.Forms.Padding(0);
             this.lvManualMemoryCharactersList.MultiSelect = false;
@@ -1224,98 +1299,19 @@
             this.pbMain.Size = new System.Drawing.Size(670, 20);
             this.pbMain.TabIndex = 2;
             // 
-            // btnT7Start
+            // tbManualMemoryCurrentWins
             // 
-            this.btnT7Start.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnT7Start.BackgroundImage = global::SniperManagerApp.Properties.Resources._100px_Tekken_7_cover;
-            this.btnT7Start.Location = new System.Drawing.Point(287, 33);
-            this.btnT7Start.Margin = new System.Windows.Forms.Padding(0);
-            this.btnT7Start.Name = "btnT7Start";
-            this.btnT7Start.Size = new System.Drawing.Size(104, 150);
-            this.btnT7Start.TabIndex = 6;
-            this.btnT7Start.UseVisualStyleBackColor = true;
-            this.btnT7Start.Click += new System.EventHandler(this.btnT7Start_Click);
+            this.tbManualMemoryCurrentWins.Location = new System.Drawing.Point(178, 47);
+            this.tbManualMemoryCurrentWins.Name = "tbManualMemoryCurrentWins";
+            this.tbManualMemoryCurrentWins.Size = new System.Drawing.Size(66, 20);
+            this.tbManualMemoryCurrentWins.TabIndex = 58;
             // 
-            // pbLastGames10
+            // tbManualMemoryWinstreak
             // 
-            this.pbLastGames10.Location = new System.Drawing.Point(226, 223);
-            this.pbLastGames10.Name = "pbLastGames10";
-            this.pbLastGames10.Size = new System.Drawing.Size(18, 17);
-            this.pbLastGames10.TabIndex = 39;
-            this.pbLastGames10.TabStop = false;
-            // 
-            // pbLastGames9
-            // 
-            this.pbLastGames9.Location = new System.Drawing.Point(202, 223);
-            this.pbLastGames9.Name = "pbLastGames9";
-            this.pbLastGames9.Size = new System.Drawing.Size(18, 17);
-            this.pbLastGames9.TabIndex = 38;
-            this.pbLastGames9.TabStop = false;
-            // 
-            // pbLastGames8
-            // 
-            this.pbLastGames8.Location = new System.Drawing.Point(178, 223);
-            this.pbLastGames8.Name = "pbLastGames8";
-            this.pbLastGames8.Size = new System.Drawing.Size(18, 17);
-            this.pbLastGames8.TabIndex = 37;
-            this.pbLastGames8.TabStop = false;
-            // 
-            // pbLastGames7
-            // 
-            this.pbLastGames7.Location = new System.Drawing.Point(154, 223);
-            this.pbLastGames7.Name = "pbLastGames7";
-            this.pbLastGames7.Size = new System.Drawing.Size(18, 17);
-            this.pbLastGames7.TabIndex = 36;
-            this.pbLastGames7.TabStop = false;
-            // 
-            // pbLastGames6
-            // 
-            this.pbLastGames6.Location = new System.Drawing.Point(130, 223);
-            this.pbLastGames6.Name = "pbLastGames6";
-            this.pbLastGames6.Size = new System.Drawing.Size(18, 17);
-            this.pbLastGames6.TabIndex = 35;
-            this.pbLastGames6.TabStop = false;
-            // 
-            // pbLastGames5
-            // 
-            this.pbLastGames5.Location = new System.Drawing.Point(106, 223);
-            this.pbLastGames5.Name = "pbLastGames5";
-            this.pbLastGames5.Size = new System.Drawing.Size(18, 17);
-            this.pbLastGames5.TabIndex = 34;
-            this.pbLastGames5.TabStop = false;
-            // 
-            // pbLastGames4
-            // 
-            this.pbLastGames4.Location = new System.Drawing.Point(82, 223);
-            this.pbLastGames4.Name = "pbLastGames4";
-            this.pbLastGames4.Size = new System.Drawing.Size(18, 17);
-            this.pbLastGames4.TabIndex = 33;
-            this.pbLastGames4.TabStop = false;
-            // 
-            // pbLastGames3
-            // 
-            this.pbLastGames3.Location = new System.Drawing.Point(58, 223);
-            this.pbLastGames3.Name = "pbLastGames3";
-            this.pbLastGames3.Size = new System.Drawing.Size(18, 17);
-            this.pbLastGames3.TabIndex = 32;
-            this.pbLastGames3.TabStop = false;
-            // 
-            // pbLastGames2
-            // 
-            this.pbLastGames2.Location = new System.Drawing.Point(34, 223);
-            this.pbLastGames2.Name = "pbLastGames2";
-            this.pbLastGames2.Size = new System.Drawing.Size(18, 17);
-            this.pbLastGames2.TabIndex = 31;
-            this.pbLastGames2.TabStop = false;
-            // 
-            // pbLastGames1
-            // 
-            this.pbLastGames1.InitialImage = null;
-            this.pbLastGames1.Location = new System.Drawing.Point(10, 223);
-            this.pbLastGames1.Name = "pbLastGames1";
-            this.pbLastGames1.Size = new System.Drawing.Size(18, 17);
-            this.pbLastGames1.TabIndex = 30;
-            this.pbLastGames1.TabStop = false;
+            this.tbManualMemoryWinstreak.Location = new System.Drawing.Point(178, 74);
+            this.tbManualMemoryWinstreak.Name = "tbManualMemoryWinstreak";
+            this.tbManualMemoryWinstreak.Size = new System.Drawing.Size(66, 20);
+            this.tbManualMemoryWinstreak.TabIndex = 59;
             // 
             // MainWindow
             // 
@@ -1364,8 +1360,6 @@
             this.groupBox8.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            this.gbPlayerInfo.ResumeLayout(false);
-            this.gbPlayerInfo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbLastGames10)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbLastGames9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbLastGames8)).EndInit();
@@ -1376,6 +1370,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbLastGames3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbLastGames2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbLastGames1)).EndInit();
+            this.gbPlayerInfo.ResumeLayout(false);
+            this.gbPlayerInfo.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1424,7 +1420,6 @@
         internal System.Windows.Forms.ComboBox cbManualMemoryRankFilter;
         internal System.Windows.Forms.GroupBox gbCharacterInfo;
         private System.Windows.Forms.Button btnApply;
-        internal System.Windows.Forms.ComboBox cbManualMemoryCurrentWins;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         internal System.Windows.Forms.PictureBox pbLastGames10;
@@ -1478,11 +1473,12 @@
         internal System.Windows.Forms.TextBox tbNewEmenyInfo;
         internal System.Windows.Forms.TabPage tpT7Online;
         private System.Windows.Forms.TabControl tabControl1;
-        internal System.Windows.Forms.ComboBox cbManualMemoryWinstreak;
         private System.Windows.Forms.Label label4;
         internal System.Windows.Forms.TextBox tbTest;
         internal System.Windows.Forms.ComboBox cbManualMemoryELOLine;
         private System.Windows.Forms.Label label5;
+        internal System.Windows.Forms.TextBox tbManualMemoryWinstreak;
+        internal System.Windows.Forms.TextBox tbManualMemoryCurrentWins;
     }
 }
 

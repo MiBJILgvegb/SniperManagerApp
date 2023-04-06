@@ -415,11 +415,11 @@ namespace SniperManagerApp
             }*/
 
             InitSteamProcess();
+            InitSteamworksAPI();
 
-            InitSteamworksAPI(); 
-            
             //Tekken.CleanAllProcessMessages();
             //Gui.PrintLineToGuiConsole("Program ready!");
+            //InitTekkenHandle();
         }
         private bool InitTekkenHandle()
         {
@@ -1086,9 +1086,11 @@ namespace SniperManagerApp
             ManualInfoEdit.PrintPlayerSteamID();
 
             ManualInfoEdit.FillCharactersList();
-            
-        }
 
+
+            //ManualInfoEdit.FindedNewDecimal((ulong)HaradaConverter.T7ToHarada(1), "");
+            //tbTest.Text= HaradaConverter.T7ToNormal(0x641F75D4).ToString();
+        }
         private void btnApply_Click(object sender, EventArgs e)
         {
             ManualInfoEdit.ApplyChanges();

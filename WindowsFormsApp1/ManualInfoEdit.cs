@@ -84,7 +84,18 @@ namespace SniperManagerApp
 
             return winslist;
         }
-        private static void FindedNewDecimal(uint newDecimal,string str)
+        internal static void FindedNewDecimal(ulong newDecimal, string str)
+        {
+            string text = "0x";
+            byte[] bytes = BitConverter.GetBytes(newDecimal);
+            for (int i = bytes.Length - 1; i >= 0; i--)
+            {
+                if (bytes[i] > 10) text += bytes[i].ToString("X");
+                else text += '0' + bytes[i].ToString("X");
+            }
+            FormToGui.ManualMemoryTest_Text(str + " - " + text);
+        }
+        internal static void FindedNewDecimal(uint newDecimal,string str)
         {
             string text="0x";
             byte[] bytes=BitConverter.GetBytes(newDecimal);
@@ -165,17 +176,19 @@ namespace SniperManagerApp
         }
         private static void FillWinstreak(byte[] characterData)
         {
-            FillWinstreakList();
+            //FillWinstreakList();
             uint winstreak = GetCurrentCharacterWinstreak(characterData);
-            
-            if (Pointers.CHARACTERINFO_MEMORY_KNOWEDDECUMALS.ContainsValue(winstreak))
+
+            Gui.Text(MainWindow.mainWindow.tbManualMemoryWinstreak,HaradaConverter.T7ToNormal(winstreak).ToString());
+
+            /*if (Pointers.CHARACTERINFO_MEMORY_KNOWEDDECUMALS.ContainsValue(winstreak))
             {
                 FormToGui.ManualMemoryCharacterWinstreak_Select((int)DictionaryGetIndexAsArray(Pointers.CHARACTERINFO_MEMORY_KNOWEDDECUMALS, winstreak));
             }
             else
             {
                 FindedNewDecimal(winstreak,"winstreak");
-            }
+            }*/
         }
         private static void FillMatchHistory() 
         {
@@ -196,7 +209,7 @@ namespace SniperManagerApp
             FillRankList(characterData);
             FillWinsCount(characterData);
             FillWinstreak(characterData);
-            PreselectELOLine();
+            //PreselectELOLine();
             FillMatchHistory();
 
             FormToGui.ManualMemoryCharacterInfoControls_Show();
@@ -217,27 +230,33 @@ namespace SniperManagerApp
         }
         private static void FillWinsCount(byte[] characterData)
         {
-            FillWinsList();
+            //FillWinsList();
             uint winsCount = GetCurrentWinsCount(characterData);
-            if(Pointers.CHARACTERINFO_MEMORY_KNOWEDDECUMALS.ContainsValue(winsCount))
+
+            Gui.Text(MainWindow.mainWindow.tbManualMemoryCurrentWins,HaradaConverter.T7ToNormal(winsCount).ToString());
+
+            /*if(Pointers.CHARACTERINFO_MEMORY_KNOWEDDECUMALS.ContainsValue(winsCount))
             {
                 FormToGui.ManualMemoryCharacterWins_Select((int)DictionaryGetIndexAsArray(Pointers.CHARACTERINFO_MEMORY_KNOWEDDECUMALS, winsCount));
             }
             else
             {
                 FindedNewDecimal(winsCount,"wins");
-            }
+            }*/
         }
         private static uint GetNewRank() { return Pointers.ALL_PLAYABLE_RANKS_MEMORY_IMPLIMENTATION[FormToGui.ManualMemoryGetSelectedRank()]; }
         private static long GetNewWinsCount()
         {
-            uint value= (uint)DictionaryGetValueAsArray(Pointers.CHARACTERINFO_MEMORY_KNOWEDDECUMALS, (uint)FormToGui.ManualMemoryGetSelectedWinsCount());
+            return HaradaConverter.T7ToHarada(Convert.ToUInt32(Gui.Text(MainWindow.mainWindow.tbManualMemoryCurrentWins)));
+            
+            /*uint value= (uint)DictionaryGetValueAsArray(Pointers.CHARACTERINFO_MEMORY_KNOWEDDECUMALS, (uint)FormToGui.ManualMemoryGetSelectedWinsCount());
 
             if(value>=0)
             {
-                return (long)value;
+                //return (long)value;
+                return HaradaConverter.T7ToHarada(Gui.GetSelectedIndex(MainWindow.mainWindow.cbManualMemoryCurrentWins));
             }
-            else { return -1; }
+            else { return -1; }*/
         }
         private static byte[] GetNewMatchHistory()
         {
@@ -245,26 +264,31 @@ namespace SniperManagerApp
         }
         private static long GetNewWinstreak() 
         {
-            uint value = (uint)DictionaryGetValueAsArray(Pointers.CHARACTERINFO_MEMORY_KNOWEDDECUMALS, (uint)FormToGui.ManualMemoryGetSelectedWinstreakCount());
+            return HaradaConverter.T7ToHarada(Convert.ToUInt32(Gui.Text(MainWindow.mainWindow.tbManualMemoryWinstreak)));
+
+            /*uint value = (uint)DictionaryGetValueAsArray(Pointers.CHARACTERINFO_MEMORY_KNOWEDDECUMALS, (uint)FormToGui.ManualMemoryGetSelectedWinstreakCount());
 
             if (value >= 0)
             {
-                return (long)value;
+                //return (long)value;
+                return Gui.GetSelectedIndex(MainWindow.mainWindow.cbManualMemoryWinstreak);
             }
-            else { return -1; }
+            else { return -1; }*/
         }
         internal static void ApplyChanges()
         {
             uint newRank = GetNewRank();
-            uint newWinsCount = (uint)GetNewWinsCount();
-            uint newWinstreak = (uint)GetNewWinstreak();
+            //uint newWinsCount = (uint)GetNewWinsCount();
+            int newWinsCount = (int)GetNewWinsCount();
+
+            int newWinstreak = (int)GetNewWinstreak();
             byte[] matchHistory = GetNewMatchHistory();
             long player_segment_start = ProcessMemory.GetDynamicAddress(MainWindow.tekkenModulePointer+ Pointers.PLAYER_NAME_STATIC_POINTER, Pointers.PLAYER_SEGMENT_POINTER_OFFSETS);
 
             Dictionary<int,uint> newInfo= new Dictionary<int,uint>();
             newInfo.Add(Pointers.CHARACTERINFO_MEMORY_OFFSETS["RANK"], newRank);
-            newInfo.Add(Pointers.CHARACTERINFO_MEMORY_OFFSETS["RANKEDWINS"], newWinsCount);
-            newInfo.Add(Pointers.CHARACTERINFO_MEMORY_OFFSETS["WINSTREAK"], newWinstreak);
+            newInfo.Add(Pointers.CHARACTERINFO_MEMORY_OFFSETS["RANKEDWINS"], (uint)newWinsCount);
+            newInfo.Add(Pointers.CHARACTERINFO_MEMORY_OFFSETS["WINSTREAK"], (uint)newWinstreak);
 
             WriteNewCharacterInfo(characterInfoOffset,newInfo);
             WriteNewMatchHistory(player_segment_start, matchHistory);

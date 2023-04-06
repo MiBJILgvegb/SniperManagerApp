@@ -1,1 +1,65 @@
-{0,0xCCA40FBD},{1,0xF1481F7C},{2,0x8B903EFF},{10,0xB83EEBB7},{12,0x5EFBAED1},{15,0x83DD76F2},{16,0x40BAEDCD},{22,0x39BB732B},{34,0xAB903EDF},{37,0xD0EDC225},{43,0x267DD756},{44,0x7EFBAEF1},{47,0xA3DD76D2},{49,0xD875DBAC},{59,0x99B733C7},{50,0x89EBB70F},{101,0x9481F738},{105,0x041F75B4},{137,0xE41F7554},{197,0x3481F798},{217,0xBCDB9924},{2500,0x1140F279},{4150,0x09BB630B},{7000,0x45EDD7A5},{7250,0xF5EBAB6F},{20014,0x92EEF553},{31642,0x42B74867},{34821,0x7C817F58},{34861,0x68F7D590},{49198,0x1CEE7B53},{56578,0x5690E3FF},{58414,0x38EE5F53},{60929,0x1F48F17C},{100000,0x84E7FB42},{200000,0x92EEF553},{200017,0x967595AC},{500000,0x23DF082E}
++2AEAE6 - mov edi,ecx
++2AEAF1 - xor edi,1D { 29 }
++2AEAF9 - movzx eax,dil
++2AEAFD - mov rbx,EDCCFB96DCA40FBA { -593227846 }
++2AEB07 - and al,1F { 31 }
++2AEB09 - jna +2AEB35
++2AEB0B -		movzx ecx,al
++2AEB0E -		mov rdx,8000000000000000 { 0 }
++2AEB18 -		nop dword ptr [rax+rax+00000000]
++2AEB20 -			test rdx,rbx
++2AEB23 -			mov eax,00000000 { 0 }
++2AEB28 -			setne al
++2AEB2B -			lea rbx,[rax+rbx*2]
++2AEB2F -			sub rcx,01 { 1 }
++2AEB33 -			jne +2AEB20
++2AEB35 - movsd xmm1,[TekkenGame-Win64-Shipping.exe.rdata+49178] { (8.00) }
++2AEB3D - movsd xmm0,[TekkenGame-Win64-Shipping.exe.rdata+2F3B8] { (2.00) }
++2AEB45 - call +25BBC36 { ->->ucrtbase.pow }
++2AEB4A - and ebx,-20 { 224 }
++2AEB4D - xor ebx,edi
++2AEB4F - shl ebx,08 { 8 }
++2AEB52 - mov eax,ebx
++2AEB59 - cvttsd2si ecx,xmm0
++2AEB5D - cdq 
++2AEB5E - idiv ecx
++2AEB64 - pop rdi
++2AEB65 - ret 
+
+D4751F64
+
+
++2AEA50 - mov [rsp+08],rbx
++2AEA55 - mov [rsp+10],rdi
++2AEA5A - mov r11d,ecx
++2AEA5D - xor r10d,r10d
++2AEA60 - and r11d,00FFFFFF { 16777215 }
++2AEA67 - mov rdi,EDCCFB96DCA40FBA { -593227846 }
++2AEA71 - mov r9d,r11d
++2AEA74 - xor r8d,r8d
++2AEA77 - mov rbx,8000000000000000 { 0 }
++2AEA81 -		movzx ecx,r8l
++2AEA85 -		mov rax,rdi
++2AEA88 -		add cl,08 { 8 }
++2AEA8B -		je +2AEAA5
++2AEA8D -			movzx edx,cl
++2AEA90 -				test rbx,rax
++2AEA93 -				mov ecx,00000000 { 0 }
++2AEA98 -				setne cl
++2AEA9B -				lea rax,[rcx+rax*2]
++2AEA9F -				sub rdx,01 { 1 }
++2AEAA3 -				jne +2AEA90
++2AEAA5 -		xor eax,r9d
++2AEAA8 -		add r8d,08 { 8 }
++2AEAAC -		xor r10d,eax
++2AEAAF -		sar r9d,08 { 8 }
++2AEAB3 -		cmp r8d,18 { 24 }
++2AEAB7 - jb +2AEA81
++2AEAB9 - mov rbx,[rsp+08]
++2AEABE - test r10l,r10l
++2AEAC1 - mov rdi,[rsp+10]
++2AEAC6 - mov ecx,00000001 { 1 }
++2AEACB - movzx eax,r10l
++2AEACF - cmove eax,ecx
++2AEAD2 - shl eax,18 { 24 }
++2AEAD5 - add eax,r11d

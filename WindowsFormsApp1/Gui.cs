@@ -29,6 +29,7 @@ namespace SniperManagerApp
         public static void VisibleON(TextBox textBox) { textBox.Visible = true; }
         public static void VisibleOFF(TextBox textBox) { textBox.Visible = false; }
         public static void Clear(TextBox textBox) { textBox.Text=""; }
+        public static string Text(TextBox textBox) { return textBox.Text; }
         /*ListView*/
         public static void Clear(ListView listview) { listview.Clear(); }
         private static void Add(ListView listview, ListViewItem lvi) { listview.Items.Add(lvi); }

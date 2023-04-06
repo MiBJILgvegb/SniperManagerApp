@@ -1,0 +1,1065 @@
+ucrtbase.pow   - sub rsp,000000D8 { 216 }
+ucrtbase.pow+7 - movdqa [rsp+00000090],xmm6
+ucrtbase.pow+10- movdqa [rsp+000000A0],xmm7
+ucrtbase.pow+19- cmp dword ptr [ucrtbase.dll+F0978],00 { (1),0 }
+ucrtbase.pow+20- jne ucrtbase.pow+C41
+ucrtbase.pow+26-	 nop word ptr [rax+rax+00000000]
+ucrtbase.pow+30-	 movsd [rsp+20],xmm0
+ucrtbase.pow+36-	 movsd [rsp+30],xmm1
+ucrtbase.pow+3C-	 mov rdx,[rsp+20]
+ucrtbase.pow+41-	 mov r8,[rsp+30]
+ucrtbase.pow+46-	 mov r10,[ucrtbase.wctype+4A98] { (-1) }
+ucrtbase.pow+4D-	 and r10,r8
+ucrtbase.pow+50-	 je ucrtbase.pow+7A0
+ucrtbase.pow+56-	 cmp r8,[ucrtbase.wctype+4A88] { (1.00) }
+ucrtbase.pow+5D-	 je ucrtbase.pow+7F0
+ucrtbase.pow+63-	 mov r9,[ucrtbase.wctype+4A60] { (0) }
+ucrtbase.pow+6A-	 and r9,rdx
+ucrtbase.pow+6D-	 mov rax,[ucrtbase.wctype+4A90] { (0) }
+ucrtbase.pow+74-	 mov [rsp+50],rax
+ucrtbase.pow+79-	 cmp r9,[ucrtbase.wctype+4A60] { (0) }
+ucrtbase.pow+80-	 je ucrtbase.pow+570
+ucrtbase.pow+86-	 cmp rdx,[ucrtbase.wctype+4A88] { (1.00) }
+ucrtbase.pow+8D-	 je ucrtbase.pow+760
+ucrtbase.pow+93-	 cmp rdx,[ucrtbase.wctype+4A90] { (0) }
+ucrtbase.pow+9A-	 je ucrtbase.pow+920
+ucrtbase.pow+A0-	 mov r9,[ucrtbase.wctype+4A70] { (0) }
+ucrtbase.pow+A7-	 and r9,rdx
+ucrtbase.pow+AA-	 cmp r9,[ucrtbase.wctype+4A70] { (0) }
+ucrtbase.pow+B1-	 je ucrtbase.pow+9D0
+ucrtbase.pow+B7-	 mov r10,[ucrtbase.wctype+4A70] { (0) }
+ucrtbase.pow+BE-	 and r10,r8
+ucrtbase.pow+C1-	 cmp r10,[ucrtbase.wctype+4A50] { (0) }
+ucrtbase.pow+C8-	 jg ucrtbase.pow+8D0
+ucrtbase.pow+CE-	 mov r10,[ucrtbase.wctype+4A70] { (0) }
+ucrtbase.pow+D5-	 and r10,r8
+ucrtbase.pow+D8-	 cmp r10,[ucrtbase.wctype+4A58] { (0) }
+ucrtbase.pow+DF-	 jl ucrtbase.pow+A50
+ucrtbase.pow+E5-	 xor r8,r8
+ucrtbase.pow+E8-	 movdqa xmm3,xmm0
+ucrtbase.pow+EC-	 psrlq xmm3,34 { 52 }
+ucrtbase.pow+F1-	 movq r8,xmm0
+ucrtbase.pow+F6-	 psubq xmm3,[ucrtbase.wctype+4BA0] { (1023) }
+ucrtbase.pow+FE-	 movdqa xmm2,xmm0
+ucrtbase.pow+102-	 cvtdq2pd xmm6,xmm6,xmm3
+ucrtbase.pow+106-	 pand xmm2,[ucrtbase.wctype+4B90] { (-	1) }
+ucrtbase.pow+10E-	 comisd xmm6,[ucrtbase.wctype+4C80] { (-	1023.00) }
+ucrtbase.pow+116-	 je ucrtbase.pow+530
+ucrtbase.pow+11C-	 movsd xmm7,xmm0
+ucrtbase.pow+120-	 mov r9,r8
+ucrtbase.pow+123-	 and r8,[ucrtbase.wctype+4B08] { (0) }
+ucrtbase.pow+12A-	 and r9,[ucrtbase.wctype+4B10] { (0) }
+ucrtbase.pow+131-	 subsd xmm7,[ucrtbase.wctype+4BF0] { (1.00) }
+ucrtbase.pow+139-	 shl r9,1
+ucrtbase.pow+13C-	 add r8,r9
+ucrtbase.pow+13F-	 mov [rsp+00000080],r8
+ucrtbase.pow+147-	 andpd xmm7,[ucrtbase.wctype+4CB0] { (-	1) }
+ucrtbase.pow+14F-	 movsd xmm1,[rsp+00000080]
+ucrtbase.pow+158-	 shr r8,2C { 44 }
+ucrtbase.pow+15C-	 por xmm2,[ucrtbase.wctype+4C00] { (0.50) }
+ucrtbase.pow+164-	 por xmm1,[ucrtbase.wctype+4C00] { (0.50) }
+ucrtbase.pow+16C-	 lea r9,[ucrtbase.wctype+4CC0] { (2.00) }
+ucrtbase.pow+173-	 lea rdx,[ucrtbase.wctype+54D0] { (0) }
+ucrtbase.pow+17A-	 comisd xmm7,[ucrtbase.wctype+4CA0] { (0.13) }
+ucrtbase.pow+182-	 jb ucrtbase.pow+630
+ucrtbase.pow+188-	 subsd xmm1,xmm2
+ucrtbase.pow+18C-	 movsd xmm4,xmm1
+ucrtbase.pow+190-	 mulsd xmm1,[r9+r8*8]
+ucrtbase.pow+196-	 movsd xmm5,xmm1
+ucrtbase.pow+19A-	 mulsd xmm4,[rdx+r8*8]
+ucrtbase.pow+1A0-	 movsd xmm7,xmm4
+ucrtbase.pow+1A4-	 addsd xmm1,xmm4
+ucrtbase.pow+1A8-	 movsd xmm2,xmm1
+ucrtbase.pow+1AC-	 movsd xmm0,xmm1
+ucrtbase.pow+1B0-	 lea r9,[ucrtbase.wctype+2ED0] { (0) }
+ucrtbase.pow+1B7-	 movsd xmm3,[ucrtbase.wctype+4C60] { (0.17) }
+ucrtbase.pow+1BF-	 movsd xmm1,[ucrtbase.wctype+4C30] { (0.33) }
+ucrtbase.pow+1C7-	 mulsd xmm3,xmm2
+ucrtbase.pow+1CB-	 mulsd xmm1,xmm2
+ucrtbase.pow+1CF-	 mulsd xmm0,xmm2
+ucrtbase.pow+1D3-	 subsd xmm5,xmm2
+ucrtbase.pow+1D7-	 movsd xmm4,xmm0
+ucrtbase.pow+1DB-	 addsd xmm3,[ucrtbase.wctype+4C50] { (0.20) }
+ucrtbase.pow+1E3-	 addsd xmm1,[ucrtbase.wctype+4C20] { (0.50) }
+ucrtbase.pow+1EB-	 mulsd xmm4,xmm0
+ucrtbase.pow+1EF-	 mulsd xmm3,xmm2
+ucrtbase.pow+1F3-	 mulsd xmm1,xmm0
+ucrtbase.pow+1F7-	 addsd xmm3,[ucrtbase.wctype+4C40] { (0.25) }
+ucrtbase.pow+1FF-	 addsd xmm7,xmm5
+ucrtbase.pow+203-	 mulsd xmm3,xmm4
+ucrtbase.pow+207-	 addsd xmm1,xmm3
+ucrtbase.pow+20B-	 addsd xmm1,xmm7
+ucrtbase.pow+20F-	 movsd xmm5,[ucrtbase.wctype+4BD0] { (0.00) }
+ucrtbase.pow+217-	 lea rdx,[ucrtbase.wctype+36E0] { (0) }
+ucrtbase.pow+21E-	 mulsd xmm5,xmm6
+ucrtbase.pow+222-	 movsd xmm0,[r9+r8*8]
+ucrtbase.pow+228-	 subsd xmm5,xmm1
+ucrtbase.pow+22C-	 movsd xmm3,[rdx+r8*8]
+ucrtbase.pow+232-	 addsd xmm3,xmm5
+ucrtbase.pow+236-	 movsd xmm1,xmm3
+ucrtbase.pow+23A-	 subsd xmm3,xmm2
+ucrtbase.pow+23E-	 movsd xmm7,[ucrtbase.wctype+4BC0] { (0.69) }
+ucrtbase.pow+246-	 mulsd xmm7,xmm6
+ucrtbase.pow+24A-	 addsd xmm0,xmm7
+ucrtbase.pow+24E-	 movsd xmm7,xmm0
+ucrtbase.pow+252-	 addsd xmm0,xmm3
+ucrtbase.pow+256-	 movsd xmm5,xmm0
+ucrtbase.pow+25A-	 andpd xmm0,[ucrtbase.wctype+4B20] { (-	134217728) }
+ucrtbase.pow+262-	 mov rax,[rsp+30]
+ucrtbase.pow+267-	 and rax,[ucrtbase.wctype+4B20] { (-	134217728) }
+ucrtbase.pow+26E-	 addsd xmm2,xmm3
+ucrtbase.pow+272-	 subsd xmm7,xmm5
+ucrtbase.pow+276-	 subsd xmm1,xmm2
+ucrtbase.pow+27A-	 addsd xmm7,xmm3
+ucrtbase.pow+27E-	 subsd xmm5,xmm0
+ucrtbase.pow+282-	 mov [rsp+70],rax
+ucrtbase.pow+287-	 movsd xmm4,[rsp+30]
+ucrtbase.pow+28D-	 addsd xmm7,xmm1
+ucrtbase.pow+291-	 addsd xmm7,xmm5
+ucrtbase.pow+295-	 movsd xmm2,[rsp+70]
+ucrtbase.pow+29B-	 subsd xmm4,xmm2
+ucrtbase.pow+29F-	 movsd xmm3,xmm4
+ucrtbase.pow+2A3-	 movsd xmm5,xmm7
+ucrtbase.pow+2A7-	 movsd xmm6,xmm0
+ucrtbase.pow+2AB-	 mulsd xmm3,xmm7
+ucrtbase.pow+2AF-	 mulsd xmm4,xmm0
+ucrtbase.pow+2B3-	 mulsd xmm5,xmm2
+ucrtbase.pow+2B7-	 mulsd xmm6,xmm2
+ucrtbase.pow+2BB-	 movsd xmm1,xmm6
+ucrtbase.pow+2BF-	 addsd xmm3,xmm4
+ucrtbase.pow+2C3-	 addsd xmm3,xmm5
+ucrtbase.pow+2C7-	 addsd xmm1,xmm3
+ucrtbase.pow+2CB-	 movsd xmm0,xmm1
+ucrtbase.pow+2CF-	 subsd xmm6,xmm1
+ucrtbase.pow+2D3-	 addsd xmm6,xmm3
+ucrtbase.pow+2D7-	 movsd xmm7,[ucrtbase.wctype+5D50] { (92.33) }
+ucrtbase.pow+2DF-	 movsd [rsp+40],xmm0
+ucrtbase.pow+2E5-	 mulsd xmm7,xmm0
+ucrtbase.pow+2E9-	 mov rdx,[rsp+40]
+ucrtbase.pow+2EE-	 comisd xmm7,[ucrtbase.wctype+5D30] { (65536.00) }
+ucrtbase.pow+2F6-	 ja ucrtbase.pow+510
+ucrtbase.pow+2FC-	 comisd xmm7,[ucrtbase.wctype+5D40] { (-	68800.00) }
+ucrtbase.pow+304-	 jb ucrtbase.pow+4F0
+ucrtbase.pow+30A-	 cvtpd2dq xmm4,xmm7
+ucrtbase.pow+30E-	 lea r10,[ucrtbase.wctype+6FE0] { (1.00) }
+ucrtbase.pow+315-	 lea r11,[ucrtbase.wctype+71E0] { (0) }
+ucrtbase.pow+31C-	 cvtdq2pd xmm1,xmm1,xmm4
+ucrtbase.pow+320-	 movsd xmm2,[ucrtbase.wctype+5D60] { (0.01) }
+ucrtbase.pow+328-	 mulsd xmm2,xmm1
+ucrtbase.pow+32C-	 movd ecx,xmm4
+ucrtbase.pow+330-	 mov rax,0000003F { 63 }
+ucrtbase.pow+337-	 and eax,ecx
+ucrtbase.pow+339-	 subsd xmm0,xmm2
+ucrtbase.pow+33D-	 mulsd xmm1,[ucrtbase.wctype+5D70] { (0.00) }
+ucrtbase.pow+345-	 movsd xmm2,xmm0
+ucrtbase.pow+349-	 sub ecx,eax
+ucrtbase.pow+34B-	 sar ecx,06 { 6 }
+ucrtbase.pow+34E-	 addsd xmm2,xmm1
+ucrtbase.pow+352-	 addsd xmm2,xmm6
+ucrtbase.pow+356-	 movsd xmm1,xmm2
+ucrtbase.pow+35A-	 movsd xmm0,[ucrtbase.wctype+5DC0] { (0.50) }
+ucrtbase.pow+362-	 movsd xmm3,[ucrtbase.wctype+5DA0] { (0.04) }
+ucrtbase.pow+36A-	 movsd xmm4,[ucrtbase.wctype+5D80] { (0.00) }
+ucrtbase.pow+372-	 mulsd xmm1,xmm2
+ucrtbase.pow+376-	 mulsd xmm0,xmm2
+ucrtbase.pow+37A-	 mulsd xmm3,xmm2
+ucrtbase.pow+37E-	 mulsd xmm4,xmm2
+ucrtbase.pow+382-	 movsd xmm5,xmm1
+ucrtbase.pow+386-	 mulsd xmm1,xmm2
+ucrtbase.pow+38A-	 addsd xmm0,[ucrtbase.wctype+4BF0] { (1.00) }
+ucrtbase.pow+392-	 addsd xmm3,[ucrtbase.wctype+5DB0] { (0.17) }
+ucrtbase.pow+39A-	 mulsd xmm5,xmm1
+ucrtbase.pow+39E-	 addsd xmm4,[ucrtbase.wctype+5D90] { (0.01) }
+ucrtbase.pow+3A6-	 mulsd xmm0,xmm2
+ucrtbase.pow+3AA-	 mulsd xmm3,xmm1
+ucrtbase.pow+3AE-	 mulsd xmm4,xmm5
+ucrtbase.pow+3B2-	 xor r9d,r9d
+ucrtbase.pow+3B5-	 addsd xmm3,xmm4
+ucrtbase.pow+3B9-	 addsd xmm0,xmm3
+ucrtbase.pow+3BD-	 cmp ecx,[ucrtbase.wctype+5CE0] { (-	1022) }
+ucrtbase.pow+3C3-	 cmovle r9d,ecx
+ucrtbase.pow+3C7-	 add rcx,000003FF { 1023 }
+ucrtbase.pow+3CE-	 shl rcx,34 { 52 }
+ucrtbase.pow+3D2-	 movsd xmm5,[r11+rax*8]
+ucrtbase.pow+3D8-	 movsd xmm1,[r10+rax*8]
+ucrtbase.pow+3DE-	 mulsd xmm5,xmm0
+ucrtbase.pow+3E2-	 mulsd xmm1,xmm0
+ucrtbase.pow+3E6-	 addsd xmm5,[r11+rax*8]
+ucrtbase.pow+3EC-	 addsd xmm1,xmm5
+ucrtbase.pow+3F0-	 addsd xmm1,[r10+rax*8]
+ucrtbase.pow+3F6-	 movsd xmm0,xmm1
+ucrtbase.pow+3FA-	 cmp rcx,[ucrtbase.wctype+4B70] { (0) }
+ucrtbase.pow+401-	 je ucrtbase.pow+440
+ucrtbase.pow+403-	 mov [rsp+40],rcx
+ucrtbase.pow+408-	 test r9d,r9d
+ucrtbase.pow+40B-	 jne ucrtbase.pow+460
+ucrtbase.pow+40D-	 mulsd xmm0,[rsp+40]
+ucrtbase.pow+413-	 orpd xmm0,[rsp+50]
+ucrtbase.pow+419-	 movdqa xmm7,[rsp+000000A0]
+ucrtbase.pow+422-	 movdqa xmm6,[rsp+00000090]
+ucrtbase.pow+42B-	 add rsp,000000D8 { 216 }
+ucrtbase.pow+432-	 ret 
+ucrtbase.pow+433-	 nop word ptr [rax+rax+00000000]
+ucrtbase.pow+440-	 comisd xmm0,[ucrtbase.wctype+4BF0] { (1.00) }
+ucrtbase.pow+448-	 jae ucrtbase.pow+510
+ucrtbase.pow+44E-	 orpd xmm0,[ucrtbase.wctype+5CF0] { (0) }
+ucrtbase.pow+456-	 orpd xmm0,[rsp+50]
+ucrtbase.pow+45C-	 jmp ucrtbase.pow+419
+ucrtbase.pow+45E-	 nop 2
+ucrtbase.pow+460-	 mov ecx,r9d
+ucrtbase.pow+463-	 xor r11d,r11d
+ucrtbase.pow+466-	 comisd xmm0,[ucrtbase.wctype+4BF0] { (1.00) }
+ucrtbase.pow+46E-	 cmovae r11d,ecx
+ucrtbase.pow+472-	 cmp r11d,[ucrtbase.wctype+5CE0] { (-	1022) }
+ucrtbase.pow+479-	 jne ucrtbase.pow+490
+ucrtbase.pow+47B-	 mulsd xmm0,[rsp+40]
+ucrtbase.pow+481-	 orpd xmm0,[rsp+50]
+ucrtbase.pow+487-	 jmp ucrtbase.pow+419
+ucrtbase.pow+489-	 nop dword ptr [rax+00000000]
+ucrtbase.pow+490-	 xor r8,r8
+ucrtbase.pow+493-	 mov r9,00000001 { 1 }
+ucrtbase.pow+49A-	 cmp rdx,[ucrtbase.wctype+5D20] { (-	744.03) }
+ucrtbase.pow+4A1-	 jg ucrtbase.pow+4D0
+ucrtbase.pow+4A3-	 add ecx,00000432 { 1074 }
+ucrtbase.pow+4A9-	 cmovs rcx,r8
+ucrtbase.pow+4AD-	 shl r9,cl
+ucrtbase.pow+4B0-	 mov rcx,r9
+ucrtbase.pow+4B3-	 mov [rsp+40],rcx
+ucrtbase.pow+4B8-	 mulsd xmm0,[rsp+40]
+ucrtbase.pow+4BE-	 orpd xmm0,[rsp+50]
+ucrtbase.pow+4C4-	 jmp ucrtbase.pow+C20
+ucrtbase.pow+4C9-	 nop dword ptr [rax+00000000]
+ucrtbase.pow+4D0-	 movsd xmm0,[ucrtbase.wctype+5D10] { (0.00) }
+ucrtbase.pow+4D8-	 orpd xmm0,[rsp+50]
+ucrtbase.pow+4DE-	 jmp ucrtbase.pow+C20
+ucrtbase.pow+4E3-	 nop word ptr [rax+rax+00000000]
+ucrtbase.pow+4F0-	 mov r11,[ucrtbase.wctype+5D00] { (0) }
+ucrtbase.pow+4F7-	 or r11,[rsp+50]
+ucrtbase.pow+4FC-	 jmp ucrtbase.pow+AF0
+ucrtbase.pow+501-	 nop word ptr [rax+rax+00000000]
+ucrtbase.pow+510-	 mov r11,[ucrtbase.wctype+4B70] { (0) }
+ucrtbase.pow+517-	 or r11,[rsp+50]
+ucrtbase.pow+51C-	 jmp ucrtbase.pow+AF0
+ucrtbase.pow+521-	 nop word ptr [rax+rax+00000000]
+ucrtbase.pow+530-	 por xmm2,[ucrtbase.wctype+4BF0] { (1.00) }
+ucrtbase.pow+538-	 subsd xmm2,[ucrtbase.wctype+4BF0] { (1.00) }
+ucrtbase.pow+540-	 movsd xmm5,xmm2
+ucrtbase.pow+544-	 pand xmm2,[ucrtbase.wctype+4B90] { (-	1) }
+ucrtbase.pow+54C-	 movq r8,xmm2
+ucrtbase.pow+551-	 psrlq xmm5,34 { 52 }
+ucrtbase.pow+556-	 psubd xmm5,[ucrtbase.wctype+4C90] { (2045) }
+ucrtbase.pow+55E-	 cvtdq2pd xmm6,xmm6,xmm5
+ucrtbase.pow+562-	 jmp ucrtbase.pow+11C
+ucrtbase.pow+567-	 nop word ptr [rax+rax+00000000]
+ucrtbase.pow+570-	 mov r10,[ucrtbase.wctype+4A70] { (0) }
+ucrtbase.pow+577-	 and r10,r8
+ucrtbase.pow+57A-	 cmp r10,[ucrtbase.wctype+4A50] { (0) }
+ucrtbase.pow+581-	 jg ucrtbase.pow+8D0
+ucrtbase.pow+587-	 mov r10,[ucrtbase.wctype+4A98] { (-	1) }
+ucrtbase.pow+58E-	 and r10,r8
+ucrtbase.pow+591-	 mov r11,r10
+ucrtbase.pow+594-	 mov rcx,[ucrtbase.wctype+4AD8] { (52) }
+ucrtbase.pow+59B-	 shr r10,cl
+ucrtbase.pow+59E-	 sub r10,[ucrtbase.wctype+4AE0] { (1023) }
+ucrtbase.pow+5A5-	 js ucrtbase.pow+880
+ucrtbase.pow+5AB-	 mov rax,[ucrtbase.wctype+4A98] { (-	1) }
+ucrtbase.pow+5B2-	 and rax,rdx
+ucrtbase.pow+5B5-	 mov [rsp+60],rax
+ucrtbase.pow+5BA-	 mov rcx,r10
+ucrtbase.pow+5BD-	 cmp r10,[ucrtbase.wctype+4AF0] { (53) }
+ucrtbase.pow+5C4-	 jg ucrtbase.pow+5F4
+ucrtbase.pow+5C6-	 mov r9,[ucrtbase.wctype+4AF8] { (-	1) }
+ucrtbase.pow+5CD-	 shr r9,cl
+ucrtbase.pow+5D0-	 and r9,r11
+ucrtbase.pow+5D3-	 jne ucrtbase.pow+880
+ucrtbase.pow+5D9-	 mov r9,[ucrtbase.wctype+4B00] { (0) }
+ucrtbase.pow+5E0-	 shr r9,cl
+ucrtbase.pow+5E3-	 and r9,r11
+ucrtbase.pow+5E6-	 je ucrtbase.pow+5F4
+ucrtbase.pow+5E8-	 mov rax,[ucrtbase.wctype+4A60] { (0) }
+ucrtbase.pow+5EF-	 mov [rsp+50],rax
+ucrtbase.pow+5F4-	 cmp rdx,[ucrtbase.wctype+4AD0] { (0) }
+ucrtbase.pow+5FB-	 je ucrtbase.pow+920
+ucrtbase.pow+601-	 cmp rdx,[ucrtbase.wctype+4AC8] { (-	1.00) }
+ucrtbase.pow+608-	 je ucrtbase.pow+830
+ucrtbase.pow+60E-	 mov r9,[ucrtbase.wctype+4A70] { (0) }
+ucrtbase.pow+615-	 and r9,rdx
+ucrtbase.pow+618-	 cmp r9,[ucrtbase.wctype+4A70] { (0) }
+ucrtbase.pow+61F-	 je ucrtbase.pow+9D0
+ucrtbase.pow+625-	 movsd xmm0,[rsp+60]
+ucrtbase.pow+62B-	 jmp ucrtbase.pow+E5
+ucrtbase.pow+630-	 movsd xmm0,xmm1
+ucrtbase.pow+634-	 subsd xmm1,xmm2
+ucrtbase.pow+638-	 movsd xmm4,xmm1
+ucrtbase.pow+63C-	 movsd xmm3,[r9+r8*8]
+ucrtbase.pow+642-	 addsd xmm3,[rdx+r8*8]
+ucrtbase.pow+648-	 mulsd xmm4,xmm3
+ucrtbase.pow+64C-	 andpd xmm4,[ucrtbase.wctype+4B20] { (-134217728) }
+ucrtbase.pow+654-	 movsd xmm5,xmm4
+ucrtbase.pow+658-	 mulsd xmm4,xmm0
+ucrtbase.pow+65C-	 subsd xmm1,xmm4
+ucrtbase.pow+660-	 mulsd xmm1,xmm3
+ucrtbase.pow+664-	 movsd xmm7,xmm1
+ucrtbase.pow+668-	 addsd xmm1,xmm5
+ucrtbase.pow+66C-	 movsd xmm2,xmm1
+ucrtbase.pow+670-	 movsd xmm0,xmm1
+ucrtbase.pow+674-	 lea r9,[ucrtbase.wctype+2ED0] { (0) }
+ucrtbase.pow+67B-	 movsd xmm3,[ucrtbase.wctype+4C70] { (0.14) }
+ucrtbase.pow+683-	 movsd xmm1,[ucrtbase.wctype+4C40] { (0.25) }
+ucrtbase.pow+68B-	 mulsd xmm3,xmm2
+ucrtbase.pow+68F-	 mulsd xmm1,xmm2
+ucrtbase.pow+693-	 mulsd xmm0,xmm2
+ucrtbase.pow+697-	 movsd xmm4,xmm0
+ucrtbase.pow+69B-	 addsd xmm3,[ucrtbase.wctype+4C60] { (0.17) }
+ucrtbase.pow+6A3-	 addsd xmm1,[ucrtbase.wctype+4C30] { (0.33) }
+ucrtbase.pow+6AB-	 mulsd xmm4,xmm0
+ucrtbase.pow+6AF-	 mulsd xmm3,xmm2
+ucrtbase.pow+6B3-	 mulsd xmm1,xmm2
+ucrtbase.pow+6B7-	 addsd xmm3,[ucrtbase.wctype+4C50] { (0.20) }
+ucrtbase.pow+6BF-	 mulsd xmm3,xmm2
+ucrtbase.pow+6C3-	 mulsd xmm1,xmm0
+ucrtbase.pow+6C7-	 mulsd xmm3,xmm4
+ucrtbase.pow+6CB-	 movsd xmm2,xmm5
+ucrtbase.pow+6CF-	 movsd xmm0,xmm7
+ucrtbase.pow+6D3-	 mulsd xmm0,xmm0
+ucrtbase.pow+6D7-	 mulsd xmm0,[ucrtbase.wctype+4C20] { (0.50) }
+ucrtbase.pow+6DF-	 mulsd xmm5,xmm7
+ucrtbase.pow+6E3-	 addsd xmm5,xmm0
+ucrtbase.pow+6E7-	 addsd xmm5,xmm7
+ucrtbase.pow+6EB-	 movsd xmm0,xmm2
+ucrtbase.pow+6EF-	 movsd xmm7,xmm2
+ucrtbase.pow+6F3-	 mulsd xmm0,xmm0
+ucrtbase.pow+6F7-	 mulsd xmm0,[ucrtbase.wctype+4C20] { (0.50) }
+ucrtbase.pow+6FF-	 movsd xmm4,xmm0
+ucrtbase.pow+703-	 addsd xmm2,xmm0
+ucrtbase.pow+707-	 subsd xmm7,xmm2
+ucrtbase.pow+70B-	 addsd xmm7,xmm4
+ucrtbase.pow+70F-	 addsd xmm3,xmm7
+ucrtbase.pow+713-	 movsd xmm4,[ucrtbase.wctype+4BD0] { (0.00) }
+ucrtbase.pow+71B-	 addsd xmm1,xmm3
+ucrtbase.pow+71F-	 mulsd xmm4,xmm6
+ucrtbase.pow+723-	 lea rdx,[ucrtbase.wctype+36E0] { (0) }
+ucrtbase.pow+72A-	 addsd xmm1,xmm5
+ucrtbase.pow+72E-	 addsd xmm4,[rdx+r8*8]
+ucrtbase.pow+734-	 subsd xmm4,xmm1
+ucrtbase.pow+738-	 movsd xmm3,xmm4
+ucrtbase.pow+73C-	 movsd xmm1,xmm4
+ucrtbase.pow+740-	 subsd xmm3,xmm2
+ucrtbase.pow+744-	 movsd xmm0,[r9+r8*8]
+ucrtbase.pow+74A-	 movsd xmm7,[ucrtbase.wctype+4BC0] { (0.69) }
+ucrtbase.pow+752-	 mulsd xmm7,xmm6
+ucrtbase.pow+756-	 addsd xmm0,xmm7
+ucrtbase.pow+75A-	 jmp ucrtbase.pow+24E
+ucrtbase.pow+75F-	 nop 
+ucrtbase.pow+760-	 xor rax,rax
+ucrtbase.pow+763-	 mov r11,r8
+ucrtbase.pow+766-	 mov r9,[ucrtbase.wctype+4A70] { (0) }
+ucrtbase.pow+76D-	 or r11,[ucrtbase.wctype+4AC0] { (0) }
+ucrtbase.pow+774-	 and r9,r8
+ucrtbase.pow+777-	 cmp r9,[ucrtbase.wctype+4A70] { (0) }
+ucrtbase.pow+77E-	 cmove rax,r8
+ucrtbase.pow+782-	 mov r9,[ucrtbase.wctype+4AA0] { (-1) }
+ucrtbase.pow+789-	 and r9,rax
+ucrtbase.pow+78C-	 je ucrtbase.pow+79B
+ucrtbase.pow+78E-	 and r9,[ucrtbase.wctype+4AC0] { (0) }
+ucrtbase.pow+795-	 je ucrtbase.pow+B90
+ucrtbase.pow+79B-	 jmp ucrtbase.pow+419
+ucrtbase.pow+7A0-	 xor rax,rax
+ucrtbase.pow+7A3-	 mov r11,rdx
+ucrtbase.pow+7A6-	 mov r9,[ucrtbase.wctype+4A70] { (0) }
+ucrtbase.pow+7AD-	 or r11,[ucrtbase.wctype+4AC0] { (0) }
+ucrtbase.pow+7B4-	 and r9,rdx
+ucrtbase.pow+7B7-	 cmp r9,[ucrtbase.wctype+4A70] { (0) }
+ucrtbase.pow+7BE-	 cmove rax,rdx
+ucrtbase.pow+7C2-	 mov r9,[ucrtbase.wctype+4AA0] { (-1) }
+ucrtbase.pow+7C9-	 and r9,rax
+ucrtbase.pow+7CC-	 je ucrtbase.pow+7DB
+ucrtbase.pow+7CE-	 and r9,[ucrtbase.wctype+4AC0] { (0) }
+ucrtbase.pow+7D5-	 je ucrtbase.pow+1590
+ucrtbase.pow+7DB-	 movsd xmm0,[ucrtbase.wctype+4BF0] { (1.00) }
+ucrtbase.pow+7E3-	 jmp ucrtbase.pow+419
+ucrtbase.pow+7E8-	 nop dword ptr [rax+rax+00000000]
+ucrtbase.pow+7F0-	 xor rax,rax
+ucrtbase.pow+7F3-	 mov r11,rdx
+ucrtbase.pow+7F6-	 mov r9,[ucrtbase.wctype+4A70] { (0) }
+ucrtbase.pow+7FD-	 or r11,[ucrtbase.wctype+4AC0] { (0) }
+ucrtbase.pow+804-	 and r9,rdx
+ucrtbase.pow+807-	 cmp r9,[ucrtbase.wctype+4A70] { (0) }
+ucrtbase.pow+80E-	 cmove rax,rdx
+ucrtbase.pow+812-	 mov r9,[ucrtbase.wctype+4AA0] { (-1) }
+ucrtbase.pow+819-	 and r9,rax
+ucrtbase.pow+81C-	 jne ucrtbase.pow+B40
+ucrtbase.pow+822-	 movq xmm0,rdx
+ucrtbase.pow+827-	 jmp ucrtbase.pow+419
+ucrtbase.pow+82C-	 nop dword ptr [rax+00]
+ucrtbase.pow+830-	 mov rdx,[ucrtbase.wctype+4A88] { (1.00) }
+ucrtbase.pow+837-	 or rdx,[rsp+50]
+ucrtbase.pow+83C-	 xor rax,rax
+ucrtbase.pow+83F-	 mov r11,r8
+ucrtbase.pow+842-	 mov r10,[ucrtbase.wctype+4A70] { (0) }
+ucrtbase.pow+849-	 or r11,[ucrtbase.wctype+4AC0] { (0) }
+ucrtbase.pow+850-	 and r10,r8
+ucrtbase.pow+853-	 cmp r10,[ucrtbase.wctype+4A70] { (0) }
+ucrtbase.pow+85A-	 cmove rax,r8
+ucrtbase.pow+85E-	 mov r10,[ucrtbase.wctype+4AA0] { (-1) }
+ucrtbase.pow+865-	 and r10,rax
+ucrtbase.pow+868-	 jne ucrtbase.pow+B90
+ucrtbase.pow+86E-	 movq xmm0,rdx
+ucrtbase.pow+873-	 jmp ucrtbase.pow+419
+ucrtbase.pow+878-	 nop dword ptr [rax+rax+00000000]
+ucrtbase.pow+880-	 mov r9,[ucrtbase.wctype+4A70] { (0) }
+ucrtbase.pow+887-	 and r9,rdx
+ucrtbase.pow+88A-	 cmp r9,[ucrtbase.wctype+4A70] { (0) }
+ucrtbase.pow+891-	 je ucrtbase.pow+9D0
+ucrtbase.pow+897-	 cmp rdx,[ucrtbase.wctype+4AD0] { (0) }
+ucrtbase.pow+89E-	 je ucrtbase.pow+920
+ucrtbase.pow+8A4-	 movsd xmm0,[rsp+20]
+ucrtbase.pow+8AA-	 movsd xmm1,[rsp+30]
+ucrtbase.pow+8B0-	 movsd xmm2,[ucrtbase.wctype+4AB0] { (Nan) }
+ucrtbase.pow+8B8-	 mov r9d,[ucrtbase.wctype+4A34] { (6) }
+ucrtbase.pow+8BF-	 call ucrtbase.log2+530
+ucrtbase.pow+8C4-	 jmp ucrtbase.pow+419
+ucrtbase.pow+8C9-	 nop dword ptr [rax+00000000]
+ucrtbase.pow+8D0-	 mov r9,[ucrtbase.wctype+4A70] { (0) }
+ucrtbase.pow+8D7-	 and r9,rdx
+ucrtbase.pow+8DA-	 cmp r9,[ucrtbase.wctype+4A70] { (0) }
+ucrtbase.pow+8E1-	 je ucrtbase.pow+9D0
+ucrtbase.pow+8E7-	 mov r9,[ucrtbase.wctype+4A98] { (-1) }
+ucrtbase.pow+8EE-	 and r9,rdx
+ucrtbase.pow+8F1-	 je ucrtbase.pow+920
+ucrtbase.pow+8F3-	 cmp rdx,[ucrtbase.wctype+4AC8] { (-1.00) }
+ucrtbase.pow+8FA-	 je ucrtbase.pow+830
+ucrtbase.pow+900-	 mov r9,rdx
+ucrtbase.pow+903-	 and r9,[ucrtbase.wctype+4A98] { (-1) }
+ucrtbase.pow+90A-	 cmp r9,[ucrtbase.wctype+4A88] { (1.00) }
+ucrtbase.pow+911-	 jl ucrtbase.pow+A70
+ucrtbase.pow+917-	 jmp ucrtbase.pow+A90
+ucrtbase.pow+91C-	 nop dword ptr [rax+00]
+ucrtbase.pow+920-	 mov r10,[ucrtbase.wctype+4A70] { (0) }
+ucrtbase.pow+927-	 xor rax,rax
+ucrtbase.pow+92A-	 and r10,r8
+ucrtbase.pow+92D-	 cmp r10,[ucrtbase.wctype+4A70] { (0) }
+ucrtbase.pow+934-	 je ucrtbase.pow+990
+ucrtbase.pow+936-	 mov r10,[ucrtbase.wctype+4A60] { (0) }
+ucrtbase.pow+93D-	 and r10,r8
+ucrtbase.pow+940-	 cmovne rax,[ucrtbase.wctype+4A80] { (0) }
+ucrtbase.pow+948-	 jne ucrtbase.pow+960
+ucrtbase.pow+94A-	 movq xmm0,rax
+ucrtbase.pow+94F-	 orpd xmm0,[rsp+50]
+ucrtbase.pow+955-	 jmp ucrtbase.pow+419
+ucrtbase.pow+95A-	 nop word ptr [rax+rax+00]
+ucrtbase.pow+960-	 movsd xmm0,[rsp+20]
+ucrtbase.pow+966-	 movsd xmm1,[rsp+30]
+ucrtbase.pow+96C-	 movq xmm2,rax
+ucrtbase.pow+971-	 orpd xmm2,[rsp+50]
+ucrtbase.pow+977-	 mov r9d,[ucrtbase.wctype+4A24] { (2) }
+ucrtbase.pow+97E-	 call ucrtbase.log2+530
+ucrtbase.pow+983-	 jmp ucrtbase.pow+419
+ucrtbase.pow+988-	 nop dword ptr [rax+rax+00000000]
+ucrtbase.pow+990-	 mov r11,r8
+ucrtbase.pow+993-	 cmp r8,[ucrtbase.wctype+4A78] { (0) }
+ucrtbase.pow+99A-	 cmove rax,[ucrtbase.wctype+4A80] { (0) }
+ucrtbase.pow+9A2-	 je ucrtbase.pow+960
+ucrtbase.pow+9A4-	 or r11,[ucrtbase.wctype+4AC0] { (0) }
+ucrtbase.pow+9AB-	 mov r10,[ucrtbase.wctype+4AA0] { (-1) }
+ucrtbase.pow+9B2-	 and r10,r8
+ucrtbase.pow+9B5-	 jne ucrtbase.pow+B90
+ucrtbase.pow+9BB-	 movq xmm0,rax
+ucrtbase.pow+9C0-	 jmp ucrtbase.pow+419
+ucrtbase.pow+9C5-	 nop word ptr [rax+rax+00000000]
+ucrtbase.pow+9D0-	 xor r11,r11
+ucrtbase.pow+9D3-	 mov r10,[ucrtbase.wctype+4A60] { (0) }
+ucrtbase.pow+9DA-	 and r10,r8
+ucrtbase.pow+9DD-	 cmove r11,[ucrtbase.wctype+4A80] { (0) }
+ucrtbase.pow+9E5-	 mov rax,rdx
+ucrtbase.pow+9E8-	 mov r9,[ucrtbase.wctype+4AA0] { (-1) }
+ucrtbase.pow+9EF-	 or rax,[ucrtbase.wctype+4AC0] { (0) }
+ucrtbase.pow+9F6-	 and r9,rdx
+ucrtbase.pow+9F9-	 cmovne r11,rax
+ucrtbase.pow+9FD-	 jne ucrtbase.pow+B40
+ucrtbase.pow+A03-	 xor rax,rax
+ucrtbase.pow+A06-	 mov r9,r8
+ucrtbase.pow+A09-	 mov r10,[ucrtbase.wctype+4A70] { (0) }
+ucrtbase.pow+A10-	 or r9,[ucrtbase.wctype+4AC0] { (0) }
+ucrtbase.pow+A17-	 and r10,r8
+ucrtbase.pow+A1A-	 cmp r10,[ucrtbase.wctype+4A70] { (0) }
+ucrtbase.pow+A21-	 cmove rax,r8
+ucrtbase.pow+A25-	 mov r10,[ucrtbase.wctype+4AA0] { (-1) }
+ucrtbase.pow+A2C-	 and r10,rax
+ucrtbase.pow+A2F-	 cmovne r11,r9
+ucrtbase.pow+A33-	 jne ucrtbase.pow+B90
+ucrtbase.pow+A39-	 movq xmm0,r11
+ucrtbase.pow+A3E-	 orpd xmm0,[rsp+50]
+ucrtbase.pow+A44-	 jmp ucrtbase.pow+419
+ucrtbase.pow+A49-	 nop dword ptr [rax+00000000]
+ucrtbase.pow+A50-	 movsd xmm0,[ucrtbase.wctype+4A88] { (1.00) }
+ucrtbase.pow+A58-	 addsd xmm0,xmm1
+ucrtbase.pow+A5C-	 jmp ucrtbase.pow+419
+ucrtbase.pow+A61-	 nop word ptr [rax+rax+00000000]
+ucrtbase.pow+A70-	 xor r11,r11
+ucrtbase.pow+A73-	 mov r10,[ucrtbase.wctype+4A60] { (0) }
+ucrtbase.pow+A7A-	 and r10,r8
+ucrtbase.pow+A7D-	 cmovne r11,[ucrtbase.wctype+4A80] { (0) }
+ucrtbase.pow+A85-	 jmp ucrtbase.pow+AB0
+ucrtbase.pow+A87-	 nop word ptr [rax+rax+00000000]
+ucrtbase.pow+A90-	 xor r11,r11
+ucrtbase.pow+A93-	 mov r10,[ucrtbase.wctype+4A60] { (0) }
+ucrtbase.pow+A9A-	 and r10,r8
+ucrtbase.pow+A9D-	 cmove r11,[ucrtbase.wctype+4A80] { (0) }
+ucrtbase.pow+AA5-	 nop word ptr [rax+rax+00000000]
+ucrtbase.pow+AB0-	 xor rax,rax
+ucrtbase.pow+AB3-	 mov r9,r8
+ucrtbase.pow+AB6-	 mov r10,[ucrtbase.wctype+4A70] { (0) }
+ucrtbase.pow+ABD-	 or r9,[ucrtbase.wctype+4AC0] { (0) }
+ucrtbase.pow+AC4-	 and r10,r8
+ucrtbase.pow+AC7-	 cmp r10,[ucrtbase.wctype+4A70] { (0) }
+ucrtbase.pow+ACE-	 cmove rax,r8
+ucrtbase.pow+AD2-	 mov r10,[ucrtbase.wctype+4AA0] { (-1) }
+ucrtbase.pow+AD9-	 and r10,rax
+ucrtbase.pow+ADC-	 cmovne r11,r9
+ucrtbase.pow+AE0-	 jne ucrtbase.pow+B90
+ucrtbase.pow+AE6-	 test rax,rax
+ucrtbase.pow+AE9-	 jne ucrtbase.pow+B30
+ucrtbase.pow+AEB-	 nop dword ptr [rax+rax+00]
+ucrtbase.pow+AF0-	 mov r9d,[ucrtbase.wctype+4A38] { (7) }
+ucrtbase.pow+AF7-	 test [ucrtbase.wctype+4A98],r11 { (-1) }
+ucrtbase.pow+AFE-	 cmovne r9d,[ucrtbase.wctype+4A40] { (9) }
+ucrtbase.pow+B06-	 movsd xmm0,[rsp+20]
+ucrtbase.pow+B0C-	 movsd xmm1,[rsp+30]
+ucrtbase.pow+B12-	 movq xmm2,r11
+ucrtbase.pow+B17-	 call ucrtbase.log2+530
+ucrtbase.pow+B1C-	 jmp ucrtbase.pow+419
+ucrtbase.pow+B21-	 nop word ptr [rax+rax+00000000]
+ucrtbase.pow+B30-	 movq xmm0,r11
+ucrtbase.pow+B35-	 jmp ucrtbase.pow+419
+ucrtbase.pow+B3A-	 nop word ptr [rax+rax+00]
+ucrtbase.pow+B40-	 xor rax,rax
+ucrtbase.pow+B43-	 mov r10,[ucrtbase.wctype+4A70] { (0) }
+ucrtbase.pow+B4A-	 and r10,r8
+ucrtbase.pow+B4D-	 cmp r10,[ucrtbase.wctype+4A70] { (0) }
+ucrtbase.pow+B54-	 cmove rax,r8
+ucrtbase.pow+B58-	 mov r10,[ucrtbase.wctype+4AA0] { (-1) }
+ucrtbase.pow+B5F-	 and r10,rax
+ucrtbase.pow+B62-	 jne ucrtbase.pow+BC0
+ucrtbase.pow+B64-	 movsd xmm0,[rsp+20]
+ucrtbase.pow+B6A-	 movsd xmm1,[rsp+30]
+ucrtbase.pow+B70-	 movq xmm2,r11
+ucrtbase.pow+B75-	 mov r9d,[ucrtbase.wctype+4A28] { (3) }
+ucrtbase.pow+B7C-	 call ucrtbase.log2+530
+ucrtbase.pow+B81-	 jmp ucrtbase.pow+419
+ucrtbase.pow+B86-	 nop word ptr [rax+rax+00000000]
+ucrtbase.pow+B90-	 movsd xmm0,[rsp+20]
+ucrtbase.pow+B96-	 movsd xmm1,[rsp+30]
+ucrtbase.pow+B9C-	 movq xmm2,r11
+ucrtbase.pow+BA1-	 mov r9d,[ucrtbase.wctype+4A2C] { (4) }
+ucrtbase.pow+BA8-	 call ucrtbase.log2+530
+ucrtbase.pow+BAD-	 jmp ucrtbase.pow+419
+ucrtbase.pow+BB2-	 nop word ptr [rax+rax+00000000]
+ucrtbase.pow+BC0-	 mov r9,r8
+ucrtbase.pow+BC3-	 cmp r11,[ucrtbase.wctype+4AA8] { (0) }
+ucrtbase.pow+BCA-	 cmove r11,r9
+ucrtbase.pow+BCE-	 je ucrtbase.pow+BF7
+ucrtbase.pow+BD0-	 cmp r9,[ucrtbase.wctype+4AA8] { (0) }
+ucrtbase.pow+BD7-	 cmove r9,r11
+ucrtbase.pow+BDB-	 mov r10,r9
+ucrtbase.pow+BDE-	 and r10,[ucrtbase.wctype+4A60] { (0) }
+ucrtbase.pow+BE5-	 cmovne r9,r11
+ucrtbase.pow+BE9-	 mov r10,r11
+ucrtbase.pow+BEC-	 and r10,[ucrtbase.wctype+4A60] { (0) }
+ucrtbase.pow+BF3-	 cmovne r11,r9
+ucrtbase.pow+BF7-	 or r11,[ucrtbase.wctype+4AC0] { (0) }
+ucrtbase.pow+BFE-	 movsd xmm0,[rsp+20]
+ucrtbase.pow+C04-	 movsd xmm1,[rsp+30]
+ucrtbase.pow+C0A-	 movq xmm2,r11
+ucrtbase.pow+C0F-	 mov r9d,[ucrtbase.wctype+4A30] { (5) }
+ucrtbase.pow+C16-	 call ucrtbase.log2+530
+ucrtbase.pow+C1B-	 jmp ucrtbase.pow+419
+ucrtbase.pow+C20-	 movsd xmm2,xmm0
+ucrtbase.pow+C24-	 movsd xmm0,[rsp+20]
+ucrtbase.pow+C2A-	 movsd xmm1,[rsp+30]
+ucrtbase.pow+C30-	 mov r9d,[ucrtbase.wctype+4A3C] { (8) }
+ucrtbase.pow+C37-	 call ucrtbase.log2+530
+ucrtbase.pow+C3C-	 jmp ucrtbase.pow+419
+
+ucrtbase.pow+C41- vmovsd [rsp+20],xmm0
+ucrtbase.pow+C47- vmovsd [rsp+30],xmm1
+ucrtbase.pow+C4D- mov rdx,[rsp+20]
+ucrtbase.pow+C52- mov r8,[rsp+30]
+ucrtbase.pow+C57- mov r10,[ucrtbase.wctype+4A98] { (-1) }
+ucrtbase.pow+C5E- and r10,r8
+ucrtbase.pow+C61- je ucrtbase.pow+11E0
+ucrtbase.pow+C67-	 cmp r8,[ucrtbase.wctype+4A88] { (1.00) }
+ucrtbase.pow+C6E-	 je ucrtbase.pow+1230
+ucrtbase.pow+C74-	 mov r9,[ucrtbase.wctype+4A60] { (0) }
+ucrtbase.pow+C7B-	 and r9,rdx
+ucrtbase.pow+C7E-	 cmp r9,[ucrtbase.wctype+4A60] { (0) }
+ucrtbase.pow+C85-	 mov rax,[ucrtbase.wctype+4A90] { (0) }
+ucrtbase.pow+C8C-	 mov [rsp+50],rax
+ucrtbase.pow+C91-	 je ucrtbase.pow+10E0
+ucrtbase.pow+C97-	 cmp rdx,[ucrtbase.wctype+4A88] { (1.00) }
+ucrtbase.pow+C9E-	 je ucrtbase.pow+11A0
+ucrtbase.pow+CA4-	 cmp rdx,[ucrtbase.wctype+4A90] { (0) }
+ucrtbase.pow+CAB-	 je ucrtbase.pow+1360
+ucrtbase.pow+CB1-	 mov r9,[ucrtbase.wctype+4A70] { (0) }
+ucrtbase.pow+CB8-	 and r9,rdx
+ucrtbase.pow+CBB-	 cmp r9,[ucrtbase.wctype+4A70] { (0) }
+ucrtbase.pow+CC2-	 je ucrtbase.pow+1430
+ucrtbase.pow+CC8-	 mov r10,[ucrtbase.wctype+4A70] { (0) }
+ucrtbase.pow+CCF-	 and r10,r8
+ucrtbase.pow+CD2-	 cmp r10,[ucrtbase.wctype+4A50] { (0) }
+ucrtbase.pow+CD9-	 jg ucrtbase.pow+1310
+ucrtbase.pow+CDF-	 mov r10,[ucrtbase.wctype+4A70] { (0) }
+ucrtbase.pow+CE6-	 and r10,r8
+ucrtbase.pow+CE9-	 cmp r10,[ucrtbase.wctype+4A58] { (0) }
+ucrtbase.pow+CF0-	 jl ucrtbase.pow+14B0
+ucrtbase.pow+CF6-	 vpsrlq xmm3,xmm0,34 { 52 }
+ucrtbase.pow+CFB-	 vmovq r8,xmm0
+ucrtbase.pow+D00-	 psubq xmm3,xmm3,[ucrtbase.wctype+4BA0] { (1023) }
+ucrtbase.pow+D08-	 vcvtdq2pd xmm6,xmm6,xmm0,xmm3
+ucrtbase.pow+D0C-	 vpand xmm2,xmm0,[ucrtbase.wctype+4B90] { (-1) }
+ucrtbase.pow+D14-	 vcomisd xmm6,[ucrtbase.wctype+4C80] { (-1023.00) }
+ucrtbase.pow+D1C-	 je ucrtbase.pow+10A0
+ucrtbase.pow+D22-	 mov r9,r8
+ucrtbase.pow+D25-	 and r8,[ucrtbase.wctype+4B08] { (0) }
+ucrtbase.pow+D2C-	 and r9,[ucrtbase.wctype+4B10] { (0) }
+ucrtbase.pow+D33-	 shl r9,1
+ucrtbase.pow+D36-	 add r8,r9
+ucrtbase.pow+D39-	 vmovq xmm1,r8
+ucrtbase.pow+D3E-	 shr r8,2C { 44 }
+ucrtbase.pow+D42-	 vpor xmm2,xmm2,[ucrtbase.wctype+4C00] { (0.50) }
+ucrtbase.pow+D4A-	 vpor xmm1,xmm1,[ucrtbase.wctype+4C00] { (0.50) }
+ucrtbase.pow+D52-	 lea r9,[ucrtbase.wctype+4CC0] { (2.00) }
+ucrtbase.pow+D59-	 lea rdx,[ucrtbase.wctype+54D0] { (0) }
+ucrtbase.pow+D60-	 vsubsd xmm4,xmm1,xmm2
+ucrtbase.pow+D64-	 vmulsd xmm1,xmm4,[r9+r8*8]
+ucrtbase.pow+D6A-	 vmovapd xmm5,xmm1
+ucrtbase.pow+D6E-	 vmulsd xmm4,xmm4,[rdx+r8*8]
+ucrtbase.pow+D74-	 vmovapd xmm7,xmm4
+ucrtbase.pow+D78-	 vaddsd xmm1,xmm1,xmm4
+ucrtbase.pow+D7C-	 vmovapd xmm2,xmm1
+ucrtbase.pow+D80-	 vmovapd xmm0,xmm1
+ucrtbase.pow+D84-	 lea r9,[ucrtbase.wctype+2ED0] { (0) }
+ucrtbase.pow+D8B-	 vsubsd xmm3,xmm5,xmm2
+ucrtbase.pow+D8F-	 vmovsd xmm1,[ucrtbase.wctype+4C70] { (0.14) }
+ucrtbase.pow+D97-	 vmulsd xmm0,xmm0,xmm0
+ucrtbase.pow+D9B-	 vaddsd xmm3,xmm3,xmm7
+ucrtbase.pow+D9F-	 vfmadd213sd xmm1,xmm2,[ucrtbase.wctype+4C60] { ("UUUUUU??") }
+ucrtbase.pow+DA8-	 vfmadd213sd xmm1,xmm2,[ucrtbase.wctype+4C50] { (0.20) }
+ucrtbase.pow+DB1-	 vfmadd213sd xmm1,xmm2,[ucrtbase.wctype+4C40] { (0.25) }
+ucrtbase.pow+DBA-	 vfmadd213sd xmm1,xmm2,[ucrtbase.wctype+4C30] { ("UUUUUU??") }
+ucrtbase.pow+DC3-	 vfmadd213sd xmm1,xmm2,[ucrtbase.wctype+4C20] { (0.50) }
+ucrtbase.pow+DCC-	 vfmadd213sd xmm1,xmm0,xmm3
+ucrtbase.pow+DD1-	 vmovsd xmm5,[ucrtbase.wctype+4BD0] { (0.00) }
+ucrtbase.pow+DD9-	 lea rdx,[ucrtbase.wctype+36E0] { (0) }
+ucrtbase.pow+DE0-	 vfmsub213sd xmm5,xmm6,xmm1
+ucrtbase.pow+DE5-	 vmovsd xmm0,[r9+r8*8]
+ucrtbase.pow+DEB-	 vaddsd xmm3,xmm5,[rdx+r8*8]
+ucrtbase.pow+DF1-	 vmovapd xmm1,xmm3
+ucrtbase.pow+DF5-	 vsubsd xmm3,xmm3,xmm2
+ucrtbase.pow+DF9-	 vfmadd231sd xmm0,xmm6,[ucrtbase.wctype+4BC0] { (0.69) }
+ucrtbase.pow+E02-	 vmovapd xmm7,xmm0
+ucrtbase.pow+E06-	 vaddsd xmm0,xmm0,xmm3
+ucrtbase.pow+E0A-	 vmovapd xmm5,xmm0
+ucrtbase.pow+E0E-	 vandpd xmm0,xmm0,[ucrtbase.wctype+4B20] { (-134217728) }
+ucrtbase.pow+E16-	 mov rax,[rsp+30]
+ucrtbase.pow+E1B-	 and rax,[ucrtbase.wctype+4B20] { (-134217728) }
+ucrtbase.pow+E22-	 vaddsd xmm2,xmm2,xmm3
+ucrtbase.pow+E26-	 vsubsd xmm7,xmm7,xmm5
+ucrtbase.pow+E2A-	 vsubsd xmm1,xmm1,xmm2
+ucrtbase.pow+E2E-	 vaddsd xmm7,xmm7,xmm3
+ucrtbase.pow+E32-	 vsubsd xmm5,xmm5,xmm0
+ucrtbase.pow+E36-	 mov [rsp+70],rax
+ucrtbase.pow+E3B-	 vmovsd xmm4,[rsp+30]
+ucrtbase.pow+E41-	 vaddsd xmm7,xmm7,xmm1
+ucrtbase.pow+E45-	 vaddsd xmm7,xmm7,xmm5
+ucrtbase.pow+E49-	 vmovsd xmm2,[rsp+70]
+ucrtbase.pow+E4F-	 vsubsd xmm4,xmm4,xmm2
+ucrtbase.pow+E53-	 vmulsd xmm3,xmm4,xmm7
+ucrtbase.pow+E57-	 vmulsd xmm4,xmm4,xmm0
+ucrtbase.pow+E5B-	 vmulsd xmm5,xmm7,xmm2
+ucrtbase.pow+E5F-	 vmulsd xmm6,xmm0,xmm2
+ucrtbase.pow+E63-	 vmovapd xmm1,xmm6
+ucrtbase.pow+E67-	 vaddsd xmm3,xmm3,xmm4
+ucrtbase.pow+E6B-	 vaddsd xmm3,xmm3,xmm5
+ucrtbase.pow+E6F-	 vaddsd xmm1,xmm1,xmm3
+ucrtbase.pow+E73-	 vmovapd xmm0,xmm1
+ucrtbase.pow+E77-	 vsubsd xmm6,xmm6,xmm1
+ucrtbase.pow+E7B-	 vaddsd xmm6,xmm6,xmm3
+ucrtbase.pow+E7F-	 vmovsd [rsp+40],xmm0
+ucrtbase.pow+E85-	 vmulsd xmm7,xmm0,[ucrtbase.wctype+5D50] { (92.33) }
+ucrtbase.pow+E8D-	 mov rdx,[rsp+40]
+ucrtbase.pow+E92-	 vcomisd xmm7,[ucrtbase.wctype+5D30] { (65536.00) }
+ucrtbase.pow+E9A-	 ja ucrtbase.pow+1080
+ucrtbase.pow+EA0-	 vcomisd xmm7,[ucrtbase.wctype+5D40] { (-68800.00) }
+ucrtbase.pow+EA8-	 jb ucrtbase.pow+1060
+ucrtbase.pow+EAE-	 vcvtpd2dq xmm4,xmm7
+ucrtbase.pow+EB2-	 lea r10,[ucrtbase.wctype+6FE0] { (1.00) }
+ucrtbase.pow+EB9-	 lea r11,[ucrtbase.wctype+71E0] { (0) }
+ucrtbase.pow+EC0-	 vcvtdq2pd xmm1,xmm1,xmm0,xmm4
+ucrtbase.pow+EC4-	 vfnmadd231sd xmm0,xmm1,[ucrtbase.wctype+5D60] { (0.01) }
+ucrtbase.pow+ECD-	 vmovd ecx,xmm4
+ucrtbase.pow+ED1-	 mov rax,0000003F { 63 }
+ucrtbase.pow+ED8-	 and eax,ecx
+ucrtbase.pow+EDA-	 vmulsd xmm1,xmm1,[ucrtbase.wctype+5D70] { (0.00) }
+ucrtbase.pow+EE2-	 vmovapd xmm2,xmm0
+ucrtbase.pow+EE6-	 sub ecx,eax
+ucrtbase.pow+EE8-	 sar ecx,06 { 6 }
+ucrtbase.pow+EEB-	 vaddsd xmm2,xmm2,xmm1
+ucrtbase.pow+EEF-	 vaddsd xmm2,xmm2,xmm6
+ucrtbase.pow+EF3-	 vmovapd xmm1,xmm2
+ucrtbase.pow+EF7-	 vmovsd xmm0,[ucrtbase.wctype+5D80] { (0.00) }
+ucrtbase.pow+EFF-	 xor r9d,r9d
+ucrtbase.pow+F02-	 vfmadd213sd xmm0,xmm2,[ucrtbase.wctype+5D90] { (0.01) }
+ucrtbase.pow+F0B-	 cmp ecx,[ucrtbase.wctype+5CE0] { (-1022) }
+ucrtbase.pow+F11-	 vfmadd213sd xmm0,xmm2,[ucrtbase.wctype+5DA0] { ("UUUUUU??") }
+ucrtbase.pow+F1A-	 cmovle r9d,ecx
+ucrtbase.pow+F1E-	 vfmadd213sd xmm0,xmm2,[ucrtbase.wctype+5DB0] { ("UUUUUU??") }
+ucrtbase.pow+F27-	 add rcx,000003FF { 1023 }
+ucrtbase.pow+F2E-	 vfmadd213sd xmm0,xmm2,[ucrtbase.wctype+5DC0] { (0.50) }
+ucrtbase.pow+F37-	 shl rcx,34 { 52 }
+ucrtbase.pow+F3B-	 vfmadd213sd xmm0,xmm2,[ucrtbase.wctype+4BF0] { (1.00) }
+ucrtbase.pow+F44-	 vmulsd xmm0,xmm0,xmm2
+ucrtbase.pow+F48-	 vmulsd xmm5,xmm0,[r11+rax*8]
+ucrtbase.pow+F4E-	 vmulsd xmm1,xmm0,[r10+rax*8]
+ucrtbase.pow+F54-	 cmp rcx,[ucrtbase.wctype+4B70] { (0) }
+ucrtbase.pow+F5B-	 vaddsd xmm5,xmm5,[r11+rax*8]
+ucrtbase.pow+F61-	 vaddsd xmm1,xmm1,xmm5
+ucrtbase.pow+F65-	 vaddsd xmm1,xmm1,[r10+rax*8]
+ucrtbase.pow+F6B-	 vmovapd xmm0,xmm1
+ucrtbase.pow+F6F-	 je ucrtbase.pow+FB0
+ucrtbase.pow+F71-	 test r9d,r9d
+ucrtbase.pow+F74-	 mov [rsp+40],rcx
+ucrtbase.pow+F79-	 jne ucrtbase.pow+FD0
+ucrtbase.pow+F7B-	 vmulsd xmm0,xmm0,[rsp+40]
+ucrtbase.pow+F81-	 vorpd xmm0,xmm0,[rsp+50]
+
+ucrtbase.pow+F87-	 vmovdqa xmm7,[rsp+000000A0]
+ucrtbase.pow+F90-	 vmovdqa xmm6,[rsp+00000090]
+ucrtbase.pow+F99-	 add rsp,000000D8 { 216 }
+ucrtbase.pow+FA0-	 ret 
+
+ucrtbase.pow+FA1-	 nop word ptr [rax+rax+00000000]
+ucrtbase.pow+FB0-	 vcomisd xmm0,[ucrtbase.wctype+4BF0] { (1.00) }
+ucrtbase.pow+FB8-	 jae ucrtbase.pow+1080
+ucrtbase.pow+FBE-	 vorpd xmm0,xmm0,[ucrtbase.wctype+5CF0] { (0) }
+ucrtbase.pow+FC6-	 vorpd xmm0,xmm0,[rsp+50]
+ucrtbase.pow+FCC-	 jmp ucrtbase.pow+F87
+ucrtbase.pow+FCE-	 nop 2
+ucrtbase.pow+FD0-	 mov ecx,r9d
+ucrtbase.pow+FD3-	 xor r11d,r11d
+ucrtbase.pow+FD6-	 vcomisd xmm0,[ucrtbase.wctype+4BF0] { (1.00) }
+ucrtbase.pow+FDE-	 cmovae r11d,ecx
+ucrtbase.pow+FE2-	 cmp r11d,[ucrtbase.wctype+5CE0] { (-1022) }
+ucrtbase.pow+FE9-	 jne ucrtbase.pow+1000
+ucrtbase.pow+FEB-	 vmulsd xmm0,xmm0,[rsp+40]
+ucrtbase.pow+FF1-	 vorpd xmm0,xmm0,[rsp+50]
+ucrtbase.pow+FF7-	 jmp ucrtbase.pow+F87
+ucrtbase.pow+FF9-	 nop dword ptr [rax+00000000]
+ucrtbase.pow+1000-	 xor r8,r8
+ucrtbase.pow+1003-	 cmp rdx,[ucrtbase.wctype+5D20] { (-744.03) }
+ucrtbase.pow+100A-	 mov r9,00000001 { 1 }
+ucrtbase.pow+1011-	 jg ucrtbase.pow+1040
+ucrtbase.pow+1013-	 add ecx,00000432 { 1074 }
+ucrtbase.pow+1019-	 cmovs rcx,r8
+ucrtbase.pow+101D-	 shl r9,cl
+ucrtbase.pow+1020-	 mov rcx,r9
+ucrtbase.pow+1023-	 mov [rsp+40],rcx
+ucrtbase.pow+1028-	 vmulsd xmm0,xmm0,[rsp+40]
+ucrtbase.pow+102E-	 vorpd xmm0,xmm0,[rsp+50]
+ucrtbase.pow+1034-	 jmp ucrtbase.pow+1670
+ucrtbase.pow+1039-	 nop dword ptr [rax+00000000]
+ucrtbase.pow+1040-	 vmovsd xmm0,[ucrtbase.wctype+5D10] { (0.00) }
+ucrtbase.pow+1048-	 vorpd xmm0,xmm0,[rsp+50]
+ucrtbase.pow+104E-	 jmp ucrtbase.pow+1670
+ucrtbase.pow+1053-	 nop word ptr [rax+rax+00000000]
+ucrtbase.pow+1060-	 mov r11,[ucrtbase.wctype+5D00] { (0) }
+ucrtbase.pow+1067-	 or r11,[rsp+50]
+ucrtbase.pow+106C-	 jmp ucrtbase.pow+1540
+ucrtbase.pow+1071-	 nop word ptr [rax+rax+00000000]
+ucrtbase.pow+1080-	 mov r11,[ucrtbase.wctype+4B70] { (0) }
+ucrtbase.pow+1087-	 or r11,[rsp+50]
+ucrtbase.pow+108C-	 jmp ucrtbase.pow+1540
+ucrtbase.pow+1091-	 nop word ptr [rax+rax+00000000]
+ucrtbase.pow+10A0-	 vpor xmm2,xmm2,[ucrtbase.wctype+4BF0] { (1.00) }
+ucrtbase.pow+10A8-	 vsubsd xmm2,xmm2,[ucrtbase.wctype+4BF0] { (1.00) }
+ucrtbase.pow+10B0-	 vmovapd xmm5,xmm2
+ucrtbase.pow+10B4-	 vpand xmm2,xmm2,[ucrtbase.wctype+4B90] { (-1) }
+ucrtbase.pow+10BC-	 vmovq r8,xmm2
+ucrtbase.pow+10C1-	 vpsrlq xmm5,xmm5,34 { 52 }
+ucrtbase.pow+10C6-	 vpsubd xmm5,xmm5,[ucrtbase.wctype+4C90] { (2045) }
+ucrtbase.pow+10CE-	 vcvtdq2pd xmm6,xmm6,xmm0,xmm5
+ucrtbase.pow+10D2-	 jmp ucrtbase.pow+D22
+ucrtbase.pow+10D7-	 nop word ptr [rax+rax+00000000]
+ucrtbase.pow+10E0-	 mov r10,[ucrtbase.wctype+4A70] { (0) }
+ucrtbase.pow+10E7-	 and r10,r8
+ucrtbase.pow+10EA-	 cmp r10,[ucrtbase.wctype+4A50] { (0) }
+ucrtbase.pow+10F1-	 jg ucrtbase.pow+1310
+ucrtbase.pow+10F7-	 mov r10,[ucrtbase.wctype+4A98] { (-1) }
+ucrtbase.pow+10FE-	 and r10,r8
+ucrtbase.pow+1101-	 mov r11,r10
+ucrtbase.pow+1104-	 mov rcx,[ucrtbase.wctype+4AD8] { (52) }
+ucrtbase.pow+110B-	 shr r10,cl
+ucrtbase.pow+110E-	 sub r10,[ucrtbase.wctype+4AE0] { (1023) }
+ucrtbase.pow+1115-	 js ucrtbase.pow+12C0
+ucrtbase.pow+111B-	 mov rax,[ucrtbase.wctype+4A98] { (-1) }
+ucrtbase.pow+1122-	 and rax,rdx
+ucrtbase.pow+1125-	 mov [rsp+60],rax
+ucrtbase.pow+112A-	 cmp r10,[ucrtbase.wctype+4AF0] { (53) }
+ucrtbase.pow+1131-	 mov rcx,r10
+ucrtbase.pow+1134-	 jg ucrtbase.pow+1164
+ucrtbase.pow+1136-	 mov r9,[ucrtbase.wctype+4AF8] { (-1) }
+ucrtbase.pow+113D-	 shr r9,cl
+ucrtbase.pow+1140-	 and r9,r11
+ucrtbase.pow+1143-	 jne ucrtbase.pow+12C0
+ucrtbase.pow+1149-	 mov r9,[ucrtbase.wctype+4B00] { (0) }
+ucrtbase.pow+1150-	 shr r9,cl
+ucrtbase.pow+1153-	 and r9,r11
+ucrtbase.pow+1156-	 je ucrtbase.pow+1164
+ucrtbase.pow+1158-	 mov rax,[ucrtbase.wctype+4A60] { (0) }
+ucrtbase.pow+115F-	 mov [rsp+50],rax
+ucrtbase.pow+1164-	 cmp rdx,[ucrtbase.wctype+4AD0] { (0) }
+ucrtbase.pow+116B-	 je ucrtbase.pow+1360
+ucrtbase.pow+1171-	 cmp rdx,[ucrtbase.wctype+4AC8] { (-1.00) }
+ucrtbase.pow+1178-	 je ucrtbase.pow+1270
+ucrtbase.pow+117E-	 mov r9,[ucrtbase.wctype+4A70] { (0) }
+ucrtbase.pow+1185-	 and r9,rdx
+ucrtbase.pow+1188-	 cmp r9,[ucrtbase.wctype+4A70] { (0) }
+ucrtbase.pow+118F-	 je ucrtbase.pow+1430
+ucrtbase.pow+1195-	 vmovsd xmm0,[rsp+60]
+ucrtbase.pow+119B-	 jmp ucrtbase.pow+CF6
+ucrtbase.pow+11A0-	 xor rax,rax
+ucrtbase.pow+11A3-	 mov r11,r8
+ucrtbase.pow+11A6-	 mov r9,[ucrtbase.wctype+4A70] { (0) }
+ucrtbase.pow+11AD-	 or r11,[ucrtbase.wctype+4AC0] { (0) }
+ucrtbase.pow+11B4-	 and r9,r8
+ucrtbase.pow+11B7-	 cmp r9,[ucrtbase.wctype+4A70] { (0) }
+ucrtbase.pow+11BE-	 cmove rax,r8
+ucrtbase.pow+11C2-	 mov r9,[ucrtbase.wctype+4AA0] { (-1) }
+ucrtbase.pow+11C9-	 and r9,rax
+ucrtbase.pow+11CC-	 je ucrtbase.pow+11DB
+ucrtbase.pow+11CE-	 and r9,[ucrtbase.wctype+4AC0] { (0) }
+ucrtbase.pow+11D5-	 je ucrtbase.pow+15E0
+ucrtbase.pow+11DB-	 jmp ucrtbase.pow+F87
+ucrtbase.pow+11E0- xor rax,rax
+ucrtbase.pow+11E3- mov r11,rdx
+ucrtbase.pow+11E6- mov r9,[ucrtbase.wctype+4A70] { (0) }
+ucrtbase.pow+11ED- or r11,[ucrtbase.wctype+4AC0] { (0) }
+ucrtbase.pow+11F4- and r9,rdx
+ucrtbase.pow+11F7- cmp r9,[ucrtbase.wctype+4A70] { (0) }
+ucrtbase.pow+11FE- cmove rax,rdx
+ucrtbase.pow+1202- mov r9,[ucrtbase.wctype+4AA0] { (-1) }
+ucrtbase.pow+1209- and r9,rax
+ucrtbase.pow+120C- je ucrtbase.pow+121B
+ucrtbase.pow+120E- and r9,[ucrtbase.wctype+4AC0] { (0) }
+ucrtbase.pow+1215- je ucrtbase.pow+1590
+ucrtbase.pow+121B- vmovsd xmm0,[ucrtbase.wctype+4BF0] { (1.00) }
+ucrtbase.pow+1223- jmp ucrtbase.pow+F87
+ucrtbase.pow+1228- nop dword ptr [rax+rax+00000000]
+
+ucrtbase.pow+1230- xor rax,rax
+ucrtbase.pow+1233- mov r11,rdx
+ucrtbase.pow+1236- mov r9,[ucrtbase.wctype+4A70] { (0) }
+ucrtbase.pow+123D- or r11,[ucrtbase.wctype+4AC0] { (0) }
+ucrtbase.pow+1244- and r9,rdx
+ucrtbase.pow+1247- cmp r9,[ucrtbase.wctype+4A70] { (0) }
+ucrtbase.pow+124E- cmove rax,rdx
+ucrtbase.pow+1252- mov r9,[ucrtbase.wctype+4AA0] { (-1) }
+ucrtbase.pow+1259- and r9,rax
+ucrtbase.pow+125C- jne ucrtbase.pow+1590
+ucrtbase.pow+1262- vmovq xmm0,rdx
+ucrtbase.pow+1267- jmp ucrtbase.pow+F87
+ucrtbase.pow+126C- nop dword ptr [rax+00]
+ucrtbase.pow+1270- mov rdx,[ucrtbase.wctype+4A88] { (1.00) }
+ucrtbase.pow+1277- or rdx,[rsp+50]
+ucrtbase.pow+127C- xor rax,rax
+ucrtbase.pow+127F- mov r11,r8
+ucrtbase.pow+1282- mov r10,[ucrtbase.wctype+4A70] { (0) }
+ucrtbase.pow+1289- or r11,[ucrtbase.wctype+4AC0] { (0) }
+ucrtbase.pow+1290- and r10,r8
+ucrtbase.pow+1293- cmp r10,[ucrtbase.wctype+4A70] { (0) }
+ucrtbase.pow+129A- cmove rax,r8
+ucrtbase.pow+129E- mov r10,[ucrtbase.wctype+4AA0] { (-1) }
+ucrtbase.pow+12A5- and r10,rax
+ucrtbase.pow+12A8- jne ucrtbase.pow+15E0
+ucrtbase.pow+12AE- vmovq xmm0,rdx
+ucrtbase.pow+12B3- jmp ucrtbase.pow+F87
+ucrtbase.pow+12B8- nop dword ptr [rax+rax+00000000]
+ucrtbase.pow+12C0- mov r9,[ucrtbase.wctype+4A70] { (0) }
+ucrtbase.pow+12C7- and r9,rdx
+ucrtbase.pow+12CA- cmp r9,[ucrtbase.wctype+4A70] { (0) }
+ucrtbase.pow+12D1- je ucrtbase.pow+1430
+ucrtbase.pow+12D7- cmp rdx,[ucrtbase.wctype+4AD0] { (0) }
+ucrtbase.pow+12DE- je ucrtbase.pow+1360
+ucrtbase.pow+12E4- vmovsd xmm0,[rsp+20]
+ucrtbase.pow+12EA- vmovsd xmm1,[rsp+30]
+ucrtbase.pow+12F0- vmovsd xmm2,[ucrtbase.wctype+4AB0] { (Nan) }
+ucrtbase.pow+12F8- mov r9d,[ucrtbase.wctype+4A34] { (6) }
+ucrtbase.pow+12FF- call ucrtbase.log2+530
+ucrtbase.pow+1304- jmp ucrtbase.pow+F87
+ucrtbase.pow+1309- nop dword ptr [rax+00000000]
+ucrtbase.pow+1310- mov r9,[ucrtbase.wctype+4A70] { (0) }
+ucrtbase.pow+1317- and r9,rdx
+ucrtbase.pow+131A- cmp r9,[ucrtbase.wctype+4A70] { (0) }
+ucrtbase.pow+1321- je ucrtbase.pow+1430
+ucrtbase.pow+1327- mov r9,[ucrtbase.wctype+4A98] { (-1) }
+ucrtbase.pow+132E- and r9,rdx
+ucrtbase.pow+1331- je ucrtbase.pow+1360
+ucrtbase.pow+1333- cmp rdx,[ucrtbase.wctype+4AC8] { (-1.00) }
+ucrtbase.pow+133A- je ucrtbase.pow+1270
+ucrtbase.pow+1340- mov r9,rdx
+ucrtbase.pow+1343- and r9,[ucrtbase.wctype+4A98] { (-1) }
+ucrtbase.pow+134A- cmp r9,[ucrtbase.wctype+4A88] { (1.00) }
+ucrtbase.pow+1351- jl ucrtbase.pow+14C0
+ucrtbase.pow+1357- jmp ucrtbase.pow+14E0
+ucrtbase.pow+135C- nop dword ptr [rax+00]
+ucrtbase.pow+1360- mov r10,[ucrtbase.wctype+4A70] { (0) }
+ucrtbase.pow+1367- xor rax,rax
+ucrtbase.pow+136A- and r10,r8
+ucrtbase.pow+136D- cmp r10,[ucrtbase.wctype+4A70] { (0) }
+ucrtbase.pow+1374- je ucrtbase.pow+13D0
+ucrtbase.pow+1376- mov r10,[ucrtbase.wctype+4A60] { (0) }
+ucrtbase.pow+137D- and r10,r8
+ucrtbase.pow+1380- cmovne rax,[ucrtbase.wctype+4A80] { (0) }
+ucrtbase.pow+1388- jne ucrtbase.pow+13A0
+ucrtbase.pow+138A- vmovq xmm0,rax
+ucrtbase.pow+138F- vorpd xmm0,xmm0,[rsp+50]
+ucrtbase.pow+1395- jmp ucrtbase.pow+F87
+ucrtbase.pow+139A- nop word ptr [rax+rax+00]
+ucrtbase.pow+13A0- vmovsd xmm0,[rsp+20]
+ucrtbase.pow+13A6- vmovsd xmm1,[rsp+30]
+ucrtbase.pow+13AC- vmovq xmm2,rax
+ucrtbase.pow+13B1- vorpd xmm2,xmm2,[rsp+50]
+ucrtbase.pow+13B7- mov r9d,[ucrtbase.wctype+4A24] { (2) }
+ucrtbase.pow+13BE- call ucrtbase.log2+530
+ucrtbase.pow+13C3- jmp ucrtbase.pow+F87
+ucrtbase.pow+13C8- nop dword ptr [rax+rax+00000000]
+ucrtbase.pow+13D0- mov r11,r8
+ucrtbase.pow+13D3- cmp r8,[ucrtbase.wctype+4A78] { (0) }
+ucrtbase.pow+13DA- je ucrtbase.pow+1410
+ucrtbase.pow+13DC- cmp r8,[ucrtbase.wctype+4A80] { (0) }
+ucrtbase.pow+13E3- je ucrtbase.pow+1420
+ucrtbase.pow+13E5- or r11,[ucrtbase.wctype+4AC0] { (0) }
+ucrtbase.pow+13EC- mov r10,[ucrtbase.wctype+4AA0] { (-1) }
+ucrtbase.pow+13F3- and r10,r8
+ucrtbase.pow+13F6- jne ucrtbase.pow+15E0
+ucrtbase.pow+13FC- vmovq xmm0,rax
+ucrtbase.pow+1401- jmp ucrtbase.pow+F87
+ucrtbase.pow+1406- nop word ptr [rax+rax+00000000]
+ucrtbase.pow+1410- vmovsd xmm0,[ucrtbase.wctype+4A80] { (+Inf) }
+ucrtbase.pow+1418- jmp ucrtbase.pow+F87
+ucrtbase.pow+141D- nop dword ptr [rax]
+ucrtbase.pow+1420- vxorpd xmm0,xmm0,xmm0
+ucrtbase.pow+1424- jmp ucrtbase.pow+F87
+ucrtbase.pow+1429- nop dword ptr [rax+00000000]
+ucrtbase.pow+1430- xor r11,r11
+ucrtbase.pow+1433- mov r10,[ucrtbase.wctype+4A60] { (0) }
+ucrtbase.pow+143A- and r10,r8
+ucrtbase.pow+143D- cmove r11,[ucrtbase.wctype+4A80] { (0) }
+ucrtbase.pow+1445- mov rax,rdx
+ucrtbase.pow+1448- mov r9,[ucrtbase.wctype+4AA0] { (-1) }
+ucrtbase.pow+144F- or rax,[ucrtbase.wctype+4AC0] { (0) }
+ucrtbase.pow+1456- and r9,rdx
+ucrtbase.pow+1459- cmovne r11,rax
+ucrtbase.pow+145D- jne ucrtbase.pow+1590
+ucrtbase.pow+1463- xor rax,rax
+ucrtbase.pow+1466- mov r9,r8
+ucrtbase.pow+1469- mov r10,[ucrtbase.wctype+4A70] { (0) }
+ucrtbase.pow+1470- or r9,[ucrtbase.wctype+4AC0] { (0) }
+ucrtbase.pow+1477- and r10,r8
+ucrtbase.pow+147A- cmp r10,[ucrtbase.wctype+4A70] { (0) }
+ucrtbase.pow+1481- cmove rax,r8
+ucrtbase.pow+1485- mov r10,[ucrtbase.wctype+4AA0] { (-1) }
+ucrtbase.pow+148C- and r10,rax
+ucrtbase.pow+148F- cmovne r11,r9
+ucrtbase.pow+1493- jne ucrtbase.pow+15E0
+ucrtbase.pow+1499- vmovq xmm0,r11
+ucrtbase.pow+149E- vorpd xmm0,xmm0,[rsp+50]
+ucrtbase.pow+14A4- jmp ucrtbase.pow+F87
+ucrtbase.pow+14A9- nop dword ptr [rax+00000000]
+ucrtbase.pow+14B0- vaddsd xmm0,xmm1,[ucrtbase.wctype+4A88] { (1.00) }
+ucrtbase.pow+14B8- jmp ucrtbase.pow+F87
+ucrtbase.pow+14BD- nop dword ptr [rax]
+ucrtbase.pow+14C0- xor r11,r11
+ucrtbase.pow+14C3- mov r10,[ucrtbase.wctype+4A60] { (0) }
+ucrtbase.pow+14CA- and r10,r8
+ucrtbase.pow+14CD- cmovne r11,[ucrtbase.wctype+4A80] { (0) }
+ucrtbase.pow+14D5- jmp ucrtbase.pow+1500
+ucrtbase.pow+14D7- nop word ptr [rax+rax+00000000]
+ucrtbase.pow+14E0- xor r11,r11
+ucrtbase.pow+14E3- mov r10,[ucrtbase.wctype+4A60] { (0) }
+ucrtbase.pow+14EA- and r10,r8
+ucrtbase.pow+14ED- cmove r11,[ucrtbase.wctype+4A80] { (0) }
+ucrtbase.pow+14F5- nop word ptr [rax+rax+00000000]
+ucrtbase.pow+1500- xor rax,rax
+ucrtbase.pow+1503- mov r9,r8
+ucrtbase.pow+1506- mov r10,[ucrtbase.wctype+4A70] { (0) }
+ucrtbase.pow+150D- or r9,[ucrtbase.wctype+4AC0] { (0) }
+ucrtbase.pow+1514- and r10,r8
+ucrtbase.pow+1517- cmp r10,[ucrtbase.wctype+4A70] { (0) }
+ucrtbase.pow+151E- cmove rax,r8
+ucrtbase.pow+1522- mov r10,[ucrtbase.wctype+4AA0] { (-1) }
+ucrtbase.pow+1529- and r10,rax
+ucrtbase.pow+152C- cmovne r11,r9
+ucrtbase.pow+1530- jne ucrtbase.pow+15E0
+ucrtbase.pow+1536- test rax,rax
+ucrtbase.pow+1539- jne ucrtbase.pow+1580
+ucrtbase.pow+153B- nop dword ptr [rax+rax+00]
+ucrtbase.pow+1540- mov r9d,[ucrtbase.wctype+4A38] { (7) }
+ucrtbase.pow+1547- test [ucrtbase.wctype+4A98],r11 { (-1) }
+ucrtbase.pow+154E- cmovne r9d,[ucrtbase.wctype+4A40] { (9) }
+ucrtbase.pow+1556- vmovsd xmm0,[rsp+20]
+ucrtbase.pow+155C- vmovsd xmm1,[rsp+30]
+ucrtbase.pow+1562- vmovq xmm2,r11
+ucrtbase.pow+1567- call ucrtbase.log2+530
+ucrtbase.pow+156C- jmp ucrtbase.pow+F87
+ucrtbase.pow+1571- nop word ptr [rax+rax+00000000]
+ucrtbase.pow+1580- vmovq xmm0,r11
+ucrtbase.pow+1585- jmp ucrtbase.pow+F87
+ucrtbase.pow+158A- nop word ptr [rax+rax+00]
+ucrtbase.pow+1590- xor rax,rax
+ucrtbase.pow+1593- mov r10,[ucrtbase.wctype+4A70] { (0) }
+ucrtbase.pow+159A- and r10,r8
+ucrtbase.pow+159D- cmp r10,[ucrtbase.wctype+4A70] { (0) }
+ucrtbase.pow+15A4- cmove rax,r8
+ucrtbase.pow+15A8- mov r10,[ucrtbase.wctype+4AA0] { (-1) }
+ucrtbase.pow+15AF- and r10,rax
+ucrtbase.pow+15B2- jne ucrtbase.pow+1610
+ucrtbase.pow+15B4- vmovsd xmm0,[rsp+20]
+ucrtbase.pow+15BA- vmovsd xmm1,[rsp+30]
+ucrtbase.pow+15C0- vmovq xmm2,r11
+ucrtbase.pow+15C5- mov r9d,[ucrtbase.wctype+4A28] { (3) }
+ucrtbase.pow+15CC- call ucrtbase.log2+530
+ucrtbase.pow+15D1- jmp ucrtbase.pow+F87
+ucrtbase.pow+15D6- nop word ptr [rax+rax+00000000]
+ucrtbase.pow+15E0- vmovsd xmm0,[rsp+20]
+ucrtbase.pow+15E6- vmovsd xmm1,[rsp+30]
+ucrtbase.pow+15EC- vmovq xmm2,r11
+ucrtbase.pow+15F1- mov r9d,[ucrtbase.wctype+4A2C] { (4) }
+ucrtbase.pow+15F8- call ucrtbase.log2+530
+ucrtbase.pow+15FD- jmp ucrtbase.pow+F87
+ucrtbase.pow+1602- nop word ptr [rax+rax+00000000]
+ucrtbase.pow+1610- mov r9,r8
+ucrtbase.pow+1613- cmp r11,[ucrtbase.wctype+4AA8] { (0) }
+ucrtbase.pow+161A- cmove r11,r9
+ucrtbase.pow+161E- je ucrtbase.pow+1647
+ucrtbase.pow+1620- cmp r9,[ucrtbase.wctype+4AA8] { (0) }
+ucrtbase.pow+1627- cmove r9,r11
+ucrtbase.pow+162B- mov r10,r9
+ucrtbase.pow+162E- and r10,[ucrtbase.wctype+4A60] { (0) }
+ucrtbase.pow+1635- cmovne r9,r11
+ucrtbase.pow+1639- mov r10,r11
+ucrtbase.pow+163C- and r10,[ucrtbase.wctype+4A60] { (0) }
+ucrtbase.pow+1643- cmovne r11,r9
+ucrtbase.pow+1647- or r11,[ucrtbase.wctype+4AC0] { (0) }
+ucrtbase.pow+164E- vmovsd xmm0,[rsp+20]
+ucrtbase.pow+1654- vmovsd xmm1,[rsp+30]
+ucrtbase.pow+165A- vmovq xmm2,r11
+ucrtbase.pow+165F- mov r9d,[ucrtbase.wctype+4A30] { (5) }
+ucrtbase.pow+1666- call ucrtbase.log2+530
+ucrtbase.pow+166B- jmp ucrtbase.pow+F87
+ucrtbase.pow+1670- vmovapd xmm2,xmm0
+ucrtbase.pow+1674- vmovsd xmm0,[rsp+20]
+ucrtbase.pow+167A- vmovsd xmm1,[rsp+30]
+ucrtbase.pow+1680- mov r9d,[ucrtbase.wctype+4A3C] { (8) }
+ucrtbase.pow+1687- call ucrtbase.log2+530
+ucrtbase.pow+168C- jmp ucrtbase.pow+F87
