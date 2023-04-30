@@ -31,7 +31,7 @@ namespace SniperManagerApp
         //------------------------------------------------------------------
         public static void ClearCharactersList_Manual() { Gui.Clear(MainWindow.mainWindow.lvManualMemoryCharactersList); }
         public static void ClearRanksList_CharacterInfo() { Gui.Clear(MainWindow.mainWindow.cbManualMemoryRankFilter); }
-        public static void ClearWinstreakList_CharacterInfo() { Gui.Clear(MainWindow.mainWindow.cbManualMemoryWinstreak); }
+        public static void ClearWinstreakList_CharacterInfo() { Gui.Clear(MainWindow.mainWindow.tbManualMemoryWinstreak); }
         //==================================================================
         public static void FillCharactersFilter_Save(string[] cbItems) { Gui.Fill(MainWindow.mainWindow.cbCharacterFilterSave, cbItems); }
         public static void FillCharactersFilter_Load(string[] cbItems) { Gui.Fill(MainWindow.mainWindow.cbCharacterFilterLoad, cbItems); }
@@ -88,15 +88,17 @@ namespace SniperManagerApp
         internal static bool ManualMemoryIsSelectedCharacter() { return Gui.ListView_IsSelectedItem(MainWindow.mainWindow.lvManualMemoryCharactersList); }
         internal static string ManualMemoryGetSelectedCharacter() { return Gui.ListView_GetSelectedToolTip(MainWindow.mainWindow.lvManualMemoryCharactersList); }
         internal static int ManualMemoryGetSelectedRank() { return Gui.GetSelectedIndex(MainWindow.mainWindow.cbManualMemoryRankFilter); }
-        internal static int ManualMemoryGetSelectedWinsCount() { return Gui.GetSelectedIndex(MainWindow.mainWindow.cbManualMemoryCurrentWins); }
-        internal static int ManualMemoryGetSelectedWinstreakCount() { return Gui.GetSelectedIndex(MainWindow.mainWindow.cbManualMemoryWinstreak); }
+        //internal static int ManualMemoryGetSelectedWinsCount() { return Gui.GetSelectedIndex(MainWindow.mainWindow.cbManualMemoryCurrentWins); }
+        //internal static int ManualMemoryGetSelectedWinstreakCount() { return Gui.GetSelectedIndex(MainWindow.mainWindow.cbManualMemoryWinstreak); }
         internal static int ManualMemoryGetSelectedSubstitutionCharacter() { return Gui.GetSelectedIndex(MainWindow.mainWindow.cbCharacterSubstitutionList); }
-        internal static void ManualMemoryCharacterWins_Clear() { Gui.Clear(MainWindow.mainWindow.cbManualMemoryCurrentWins); }
-        internal static void ManualMemoryCharacterWinstreak_Clear() { Gui.Clear(MainWindow.mainWindow.cbManualMemoryWinstreak); }
-        internal static void ManualMemoryCharacterWins_Fill(string[] wins) { Gui.Fill(MainWindow.mainWindow.cbManualMemoryCurrentWins, wins); }
-        internal static void ManualMemoryCharacterWinstreak_Fill(string[] wins) { Gui.Fill(MainWindow.mainWindow.cbManualMemoryWinstreak, wins); }
-        internal static void ManualMemoryCharacterWins_Select(int index) { Gui.SelectIndex(MainWindow.mainWindow.cbManualMemoryCurrentWins, index); }
-        internal static void ManualMemoryCharacterWinstreak_Select(int index) { Gui.SelectIndex(MainWindow.mainWindow.cbManualMemoryWinstreak, index); }
+        internal static void ManualMemoryCharacterWins_Clear() { Gui.Clear(MainWindow.mainWindow.tbManualMemoryCurrentWins); }
+        internal static void ManualMemoryCharacterWinstreak_Clear() { Gui.Clear(MainWindow.mainWindow.tbManualMemoryWinstreak); }
+        //internal static void ManualMemoryCharacterWins_Fill(string[] wins) { Gui.Text(MainWindow.mainWindow.tbManualMemoryCurrentWins, wins); }
+        //internal static void ManualMemoryCharacterWins_Fill(string[] wins) { Gui.Fill(MainWindow.mainWindow.tbManualMemoryCurrentWins, wins); }
+        //internal static void ManualMemoryCharacterWinstreak_Fill(string[] wins) { Gui.Text(MainWindow.mainWindow.tbManualMemoryWinstreak, wins); }
+        //internal static void ManualMemoryCharacterWinstreak_Fill(string[] wins) { Gui.Fill(MainWindow.mainWindow.tbManualMemoryWinstreak, wins); }
+        //internal static void ManualMemoryCharacterWins_Select(int index) { Gui.SelectIndex(MainWindow.mainWindow.tbManualMemoryCurrentWins, index); }
+        //internal static void ManualMemoryCharacterWinstreak_Select(int index) { Gui.SelectIndex(MainWindow.mainWindow.tbManualMemoryWinstreak, index); }
         internal static void ManualMemoryCharacterEOLLine_Select(int index) { Gui.SelectIndex(MainWindow.mainWindow.cbManualMemoryELOLine,index); }
         internal static void ManualMemoryMatchHistory_SetHistory(byte[] matchHistory)
         {
@@ -177,8 +179,8 @@ namespace SniperManagerApp
         }
         internal static void ManualMemorySubstitution_FillCharactersList(string[] characters) { Gui.Fill(MainWindow.mainWindow.cbCharacterSubstitutionList,characters); }
         internal static void ManualMemorySubstitution_ClearCharactersList() { Gui.Clear(MainWindow.mainWindow.cbCharacterSubstitutionList); }
-        internal static void ManualMemoryWinstreak_Fill(string[] wins) { Gui.Fill(MainWindow.mainWindow.cbManualMemoryWinstreak, wins); }
-        internal static string ManualMemoryWinstreak_Get() { return Gui.GetSelectedItem(MainWindow.mainWindow.cbManualMemoryWinstreak); }
+        //internal static void ManualMemoryWinstreak_Fill(string[] wins) { Gui.Text(MainWindow.mainWindow.xbManualMemoryWinstreak, wins); }
+        //internal static string ManualMemoryWinstreak_Get() { return Gui.GetSelectedItem(MainWindow.mainWindow.cbManualMemoryWinstreak); }
         internal static void ManualMemoryTest_Show() { Gui.VisibleON(MainWindow.mainWindow.tbTest); }
         internal static void ManualMemoryTest_Text(string text) { Gui.TextAppend(MainWindow.mainWindow.tbTest,text); }
         //=================================================================

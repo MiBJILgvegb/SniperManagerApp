@@ -8,9 +8,10 @@ namespace SniperManagerApp
 {
     internal class ManualInfoEdit
     {
-        internal static byte[] characterData;
+        internal static byte[] characterInfo;
         internal static long playerSegmentAddress;
         internal static long characterInfoOffset;
+        internal static Dictionary<string, int> characterData;
         private static long DictionaryGetIndex(Dictionary<long,long> dictionary, long value)
         {
             foreach(var kvp in dictionary) 
@@ -43,16 +44,6 @@ namespace SniperManagerApp
         internal static void WriteMemoryArray(long address, byte[] array)
         {
             int offset = 0;
-            for (int i = array.Length - 1; i >= 0; i--)
-            //foreach(int i in array) 
-            {
-                ProcessMemory.WriteMemory<byte>(address + offset, array[i]);
-                offset++;
-            }
-        }
-        internal static void WriteMemoryArray1(long address, byte[] array)
-        {
-            int offset = 0;
             //for (int i = array.Length - 1; i >= 0; i--)
             foreach (int i in array)
             {
@@ -72,39 +63,9 @@ namespace SniperManagerApp
             //Array.Reverse(bytes);
             return bytes;
         }
-        //-----------------------------------------------------------------------------------------------
-        private static string[] PrepareDecimalsList()
+        private static void PrepareCharacterData(byte[] characterInfo)
         {
-            string[] winslist = new string[Pointers.CHARACTERINFO_MEMORY_KNOWEDDECUMALS.Count];
-            int index = 0;
-            foreach (var kvp in Pointers.CHARACTERINFO_MEMORY_KNOWEDDECUMALS)
-            {
-                winslist[index++] = kvp.Key.ToString();
-            }
-
-            return winslist;
-        }
-        internal static void FindedNewDecimal(ulong newDecimal, string str)
-        {
-            string text = "0x";
-            byte[] bytes = BitConverter.GetBytes(newDecimal);
-            for (int i = bytes.Length - 1; i >= 0; i--)
-            {
-                if (bytes[i] > 10) text += bytes[i].ToString("X");
-                else text += '0' + bytes[i].ToString("X");
-            }
-            FormToGui.ManualMemoryTest_Text(str + " - " + text);
-        }
-        internal static void FindedNewDecimal(uint newDecimal,string str)
-        {
-            string text="0x";
-            byte[] bytes=BitConverter.GetBytes(newDecimal);
-            for(int i = bytes.Length-1; i>=0 ; i--) 
-            {
-                if (bytes[i] > 10) text += bytes[i].ToString("X");
-                else text += '0' + bytes[i].ToString("X");
-            }
-            FormToGui.ManualMemoryTest_Text(str+" - "+text);
+            characterData = new Dictionary<string, int> { {"rank", GetCurrentCharacterRank(characterInfo) },{ "wins", GetCurrentCharacterWins(characterInfo) },{ "winstreak",GetCurrentCharacterWinstreak(characterInfo) },{ "elo", GetCurrentCharacterELO(characterInfo) } };
         }
         //-----------------------------------------------------------------------------------------------
         internal static void FillCharactersList()
@@ -138,14 +99,15 @@ namespace SniperManagerApp
         {
             byte[] rank = new byte[4];
             Array.Copy(characterInfo, Pointers.CHARACTERINFO_MEMORY_OFFSETS["RANK"], rank, 0, 4);
-            //Array.Reverse(rank);
-            return Array.IndexOf(Pointers.ALL_PLAYABLE_RANKS_MEMORY_IMPLIMENTATION, BitConverter.ToUInt32(rank, 0));
+            
+            //return Array.IndexOf(Pointers.ALL_PLAYABLE_RANKS_MEMORY_IMPLIMENTATION, BitConverter.ToUInt32(rank, 0));
+            return HaradaConverter.T7ToNormal(BitConverter.ToInt32(rank, 0));
         }
-        private static void FillRankList(byte[] characterInfo)
+        private static void FillRankList(int rank)
         {
             FormToGui.ClearRanksList_CharacterInfo();
             FormToGui.FillRanksList_ManualInfoEdit(Pointers.ALL_PLAYABLE_RANKS);
-            FormToGui.SetRanksListSelectIndex_ManualInfoEdit(GetCurrentCharacterRank(characterInfo));
+            FormToGui.SetRanksListSelectIndex_ManualInfoEdit(rank-10);
             //int currentRank = GetCurrentCharacterRank(this.Text);
         }
         private static byte[] GetMatchHistory()
@@ -164,85 +126,67 @@ namespace SniperManagerApp
         
         private static void FillWinstreakList()
         {
-            FormToGui.ManualMemoryCharacterWinstreak_Clear();
-            FormToGui.ManualMemoryCharacterWinstreak_Fill(PrepareDecimalsList());
+            //FormToGui.ManualMemoryCharacterWinstreak_Clear();
+            //FormToGui.ManualMemoryCharacterWinstreak_Fill(PrepareDecimalsList());
         }
-        private static uint GetCurrentCharacterWinstreak(byte[] characterInfo)
+        private static int GetCurrentCharacterWinstreak(byte[] characterInfo)
         {
             byte[] winstreak = new byte[4];
             Array.Copy(characterInfo, Pointers.CHARACTERINFO_MEMORY_OFFSETS["WINSTREAK"], winstreak, 0, 4);
 
-            return BitConverter.ToUInt32(winstreak, 0);
+            return HaradaConverter.T7ToNormal(BitConverter.ToInt32(winstreak, 0));
         }
-        private static void FillWinstreak(byte[] characterData)
+        private static void FillWinstreak(int winstreak)
         {
-            //FillWinstreakList();
-            uint winstreak = GetCurrentCharacterWinstreak(characterData);
-
-            Gui.Text(MainWindow.mainWindow.tbManualMemoryWinstreak,HaradaConverter.T7ToNormal(winstreak).ToString());
-
-            /*if (Pointers.CHARACTERINFO_MEMORY_KNOWEDDECUMALS.ContainsValue(winstreak))
-            {
-                FormToGui.ManualMemoryCharacterWinstreak_Select((int)DictionaryGetIndexAsArray(Pointers.CHARACTERINFO_MEMORY_KNOWEDDECUMALS, winstreak));
-            }
-            else
-            {
-                FindedNewDecimal(winstreak,"winstreak");
-            }*/
+            Gui.Text(MainWindow.mainWindow.tbManualMemoryWinstreak,winstreak.ToString());
         }
         private static void FillMatchHistory() 
         {
             byte[] matchHistory= GetMatchHistory();
             FormToGui.ManualMemoryMatchHistory_SetHistory(matchHistory);
         }
-        private static void PreselectELOLine()
+        private static void FillELOLine(int currentElo)
         {
-            FormToGui.ManualMemoryCharacterEOLLine_Select(0);
+            Gui.Text(MainWindow.mainWindow.cbManualMemoryELOLine,currentElo.ToString());
+        }
+        private static int GetCurrentCharacterELO(byte[] characterInfo)
+        {
+            byte[] elo = new byte[4];
+            Array.Copy(characterInfo, Pointers.CHARACTERINFO_MEMORY_OFFSETS["ELO"], elo, 0, 4);
+
+            return HaradaConverter.T7ToNormal(BitConverter.ToInt32(elo, 0));
         }
         internal static void FillCurrentCharacterInfo()
         {
             string character = FormToGui.ManualMemoryGetSelectedCharacter();
-            characterData = GetCurrentCharacterInfo(character);
-            
+            byte [] characterInfo = GetCurrentCharacterInfo(character);
+
+            PrepareCharacterData(characterInfo);
             //FormToGui.ManualMemorySetGBTitle(man);
 
-            FillRankList(characterData);
-            FillWinsCount(characterData);
-            FillWinstreak(characterData);
-            //PreselectELOLine();
+            FillRankList(characterData["rank"]);
+            FillWinsCount(characterData["wins"]);
+            FillWinstreak(characterData["winstreak"]);
+            FillELOLine(characterData["elo"]);
             FillMatchHistory();
 
             FormToGui.ManualMemoryCharacterInfoControls_Show();
         }
-        private static uint GetCurrentWinsCount(byte[] characterInfo)
+        private static int GetCurrentCharacterWins(byte[] characterInfo)
         {
             byte[] wins = new byte[4];
             Array.Copy(characterInfo, Pointers.CHARACTERINFO_MEMORY_OFFSETS["RANKEDWINS"], wins, 0, 4);
-            //Array.Reverse(wins);
-            return BitConverter.ToUInt32(wins, 0);
-            //return Array.IndexOf(Pointers.ALL_PLAYABLE_RANKS_MEMORY_IMPLIMENTATION, BitConverter.ToUInt32(rank, 0));
+            return HaradaConverter.T7ToNormal(BitConverter.ToInt32(wins, 0));
         }
       
         private static void FillWinsList()
         {
-            FormToGui.ManualMemoryCharacterWins_Clear();
-            FormToGui.ManualMemoryCharacterWins_Fill(PrepareDecimalsList());
+            //FormToGui.ManualMemoryCharacterWins_Clear();
+            //FormToGui.ManualMemoryCharacterWins_Fill(PrepareDecimalsList());
         }
-        private static void FillWinsCount(byte[] characterData)
+        private static void FillWinsCount(int wins)
         {
-            //FillWinsList();
-            uint winsCount = GetCurrentWinsCount(characterData);
-
-            Gui.Text(MainWindow.mainWindow.tbManualMemoryCurrentWins,HaradaConverter.T7ToNormal(winsCount).ToString());
-
-            /*if(Pointers.CHARACTERINFO_MEMORY_KNOWEDDECUMALS.ContainsValue(winsCount))
-            {
-                FormToGui.ManualMemoryCharacterWins_Select((int)DictionaryGetIndexAsArray(Pointers.CHARACTERINFO_MEMORY_KNOWEDDECUMALS, winsCount));
-            }
-            else
-            {
-                FindedNewDecimal(winsCount,"wins");
-            }*/
+            Gui.Text(MainWindow.mainWindow.tbManualMemoryCurrentWins,wins.ToString());
         }
         private static uint GetNewRank() { return Pointers.ALL_PLAYABLE_RANKS_MEMORY_IMPLIMENTATION[FormToGui.ManualMemoryGetSelectedRank()]; }
         private static long GetNewWinsCount()
@@ -314,13 +258,6 @@ namespace SniperManagerApp
                 ProcessMemory.WriteMemory<byte>(address + Pointers.PLAYERINFO_MEMORY_MATCHHISTORY_OFFSET + 4 * offset, match);
                 offset++;
             }
-        }
-        internal static void ApplyPreset()
-        {
-            //byte[] preset= new byte[Pointers.CHARACTERS_PRESETS_JOSIE.Length-1];
-            //Array.Copy(Pointers.CHARACTERS_PRESETS_JOSIE,1,preset, 0, Pointers.CHARACTERS_PRESETS_JOSIE.Length - 1);
-
-            WriteMemoryArray1(characterInfoOffset+1, Pointers.CHARACTERS_PRESETS_JOSIE);
         }
         internal static int GetSubstitutionCharacter()
         {

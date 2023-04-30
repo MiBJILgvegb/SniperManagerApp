@@ -21,7 +21,8 @@ namespace SniperManagerApp
         internal static int GetSelectedIndex(ComboBox comboBox) { return comboBox.SelectedIndex; }
         internal static string GetSelectedItem(ComboBox comboBox) { return comboBox.SelectedItem.ToString(); }
         internal static void Enable(ComboBox comboBox) { comboBox.Enabled = true; }
-        public static void Disable(ComboBox comboBox) { comboBox.Enabled = false; }
+        internal static void Disable(ComboBox comboBox) { comboBox.Enabled = false; }
+        internal static void Text(ComboBox comboBox,string text) { comboBox.Text = text; }
         /*TextBox*/
         public static void Text(TextBox textBox,string text) { textBox.Text = text; }
         public static void TextAppend(TextBox textBox,string text) { textBox.Text += "\r\n"+text; }

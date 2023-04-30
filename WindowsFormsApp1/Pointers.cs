@@ -8,6 +8,16 @@ namespace SniperManagerApp
 {
     class Pointers
     {
+        public const string iniSectionsName_path = "path";
+        public const string iniSectionsName_tekken7 = "tekken7";
+        public const string iniSectionsName_components = "components";
+        public const string iniSectionKeys_lvImageListType = "lvImageListType";
+        public const string iniSectionKeys_savesPath = "savesPath";
+        public const string iniSectionT7Keys_tekkenDefaultSavepath = "tekkenDefaultSavepath";
+        public const string iniSectionT7Keys_autostart = "autostart";
+        public const string iniSectionT7Keys_restartonload = "restartonload";
+        public const string iniSectionT7Keys_closeonexit = "closeonexit";
+
         public const string TEKKEN_WINDOW_NAME = "TEKKEN 7 ";
         public const string TEKKEN_EXE_NAME = "TekkenGame-Win64-Shipping";
         public const string STEAM_EXE_NAME = "steam";
@@ -31,8 +41,9 @@ namespace SniperManagerApp
         public static readonly string[] ALL_PLAYABLE_RANKS = { "1st Dan", "2nd Dan", "3rd Dan", "Initiate", "Mentor", "Expert", "Grand master", "Brawler", "Marauder", "Fighter", "Vanguard", "Warrior", "Vindicator", "Juggernaut", "Usurper", "Vanquisher", "Destroyer", "Savior", "Overlord", "Genbu", "Byakko", "Seiryu", "Suzaku", "Mighty Ruler", "Revered Ruler", "Divine Ruler", "Eternal Ruler", "Fujin", "Raijin", "Yaksa", "Ryujin", "Emperor", "Tekken King", "Tekken God", "TTG", "TGP", "TGO" };
         public static readonly uint[] ALL_PLAYABLE_RANKS_MEMORY_IMPLIMENTATION = { 0xB83EEBB7, 0x067DD776, 0x5EFBAED1, 0xC0F75DB0, 0x83DD76F2, 0xFCEEBB73, 0x40BAEDCD, 0xF875DB8C, 0xA9EBB72F, 0x0DD76E6E, 0x61AEDCC9, 0xB65DB988, 0x39BB732B, 0x2076E66A, 0x1EEDCCE5, 0x7CDB99E4, 0xB9B733E7, 0x156E67C6, 0x68DCCFA1, 0x9CB99F60, 0x74733EE3, 0x83E67DC2, 0xECA40F9D, 0xD1481F5C, 0xAB903EDF, 0x79207DFE, 0xF840FB99, 0xD481F778, 0xAC03EE9B, 0x5A07DD5A, 0xBA0FBAD5, 0x441F75F4, 0x983EEB97, 0x267DD756, 0x7EFBAEF1, 0xE0F75D90, 0xDCEEBB53 };
         public static readonly Dictionary<string, uint> ALL_PLAYABLE_RANKS_MEMORY_IMPLIMENTATION2 = new Dictionary<string, uint> { { "1st Dan", 0xB83EEBB7 }, { "2nd Dan", 0x67DD776 }, { "3rd Dan", 0x5EFBAED1 }, { "Initiate", 0xC0F75DB0 }, { "Mentor", 0x83DD76F2 }, { "Expert", 0xFCEEBB73 }, { "Grand master", 0x40BAEDCD }, { "Brawler", 0xF875DB8C }, { "Marauder", 0xA9EBB72F }, { "Fighter", 0xDD76E6E }, { "Vanguard", 0x61AEDCC9 }, { "Warrior", 0xB65DB988 }, { "Vindicator", 0x39BB732B }, { "Juggernaut", 0x2076E66A }, { "Usurper", 0x1EEDCCE5 }, { "Vanquisher", 0x7CDB99E4 }, { "Destroyer", 0xB9B733E7 }, { "Savior", 0x156E67C6 }, { "Overlord", 0x68DCCFA1 }, { "Genbu", 0x9CB99F60 }, { "Byakko", 0x74733EE3 }, { "Seiryu", 0x83E67DC2 }, { "Suzaku", 0xECA40F9D }, { "Mighty Ruler", 0xD1481F5C }, { "Revered Ruler", 0xAB903EDF }, { "Divine Ruler", 0x79207DFE }, { "Eternal Ruler", 0xF840FB99 }, { "Fujin", 0xD481F778 }, { "Raijin", 0xAC03EE9B }, { "Yaksa", 0x5A07DD5A }, { "Ryujin", 0xBA0FBAD5 }, { "Emperor", 0x441F75F4 }, { "Tekken King", 0x983EEB97 }, { "Tekken God", 0x267DD756 }, { "TTG", 0x7EFBAEF1 }, { "TGP", 0xE0F75D90 }, { "TGO", 0xDCEEBB53 } };
-        public static readonly Dictionary<string, int> CHARACTERINFO_MEMORY_OFFSETS = new Dictionary<string, int> { { "LOCALRANK", 0x4 }, { "MAXLOCALRANK", 0x8 }, { "RANK", 0x20 }, { "MAXRANK", 0x24 }, { "CURRENTELO",0x28},{ "RANKEDWINS", 0x6C },{ "RANKEDLOSE",0x70},{ "RANKEDDRAW", 0x74 }, { "WINSTREAK",0x78},{"ACRADAWINS",0x3C },{"ACRADALOSE",0x40 },{"ACRADADRAW", 0x44},{"TREASUREWINS",0x54 },{ "TREASURELOSE",0x58},{ "TREASUREDRAW",0x5C},{ "QUICKWINS",0x84},{ "QUICKLOSE",0x88},{ "QUICKDRAW",0x8C},{ "CUSTOMWINS",0x9C},{ "CUSTOMLOSE",0xA0},{ "CUSTOMDRAW",0xA4},{ "CUSTOMWINSTREAK",0xAC},{ "TURNAMETTOTAL",0xCC},{ "TURNAMETWINS",0xD0} };
+        public static readonly Dictionary<string, int> CHARACTERINFO_MEMORY_OFFSETS = new Dictionary<string, int> { { "LOCALRANK", 0x4 }, { "MAXLOCALRANK", 0x8 }, { "RANK", 0x20 }, { "MAXRANK", 0x24 }, { "ELO",0x28},{ "RANKEDWINS", 0x6C },{ "RANKEDLOSE",0x70},{ "RANKEDDRAW", 0x74 }, { "WINSTREAK",0x78},{"ACRADAWINS",0x3C },{"ACRADALOSE",0x40 },{"ACRADADRAW", 0x44},{"TREASUREWINS",0x54 },{ "TREASURELOSE",0x58},{ "TREASUREDRAW",0x5C},{ "QUICKWINS",0x84},{ "QUICKLOSE",0x88},{ "QUICKDRAW",0x8C},{ "CUSTOMWINS",0x9C},{ "CUSTOMLOSE",0xA0},{ "CUSTOMDRAW",0xA4},{ "CUSTOMWINSTREAK",0xAC},{ "TURNAMETTOTAL",0xCC},{ "TURNAMETWINS",0xD0} };
 
+        //10
         //78 - чтото связаное со стори модом и разлоченными видео
         //b4 - чтото связанное с победами (луз в кастомках или ничья)
         //b8 - то же

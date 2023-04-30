@@ -70,37 +70,40 @@ namespace SniperManagerApp
         {
             IniFiles INI = new IniFiles(ConfigurationManager.AppSettings.Get("iniPath"));
 
-            if (INI.KeyExists("path", "savesPath")) { defaultSavesPath = INI.ReadINI("path", "savesPath"); }
+            if (INI.KeyExists(Pointers.iniSectionsName_path, Pointers.iniSectionKeys_savesPath)) 
+            { 
+                defaultSavesPath = INI.ReadINI(Pointers.iniSectionsName_path, Pointers.iniSectionKeys_savesPath); 
+            }
 
             //определяем размер отображаемых иконок
-            if (INI.KeyExists("components", "lvImageListType"))
-            {
-                lvilType = int.Parse(INI.ReadINI("components", "lvImageListType"));
+            if (INI.KeyExists(Pointers.iniSectionsName_components, Pointers.iniSectionKeys_lvImageListType)) 
+            { 
+                lvilType = int.Parse(INI.ReadINI(Pointers.iniSectionsName_components, Pointers.iniSectionKeys_lvImageListType)); 
             }
 
             //определяем положения переключателей
             string isChecked = ConfigurationManager.AppSettings.Get("defaultTekkenAutostart").ToLower();
-            if (INI.KeyExists("tekken7", "autostart"))
+            if (INI.KeyExists(Pointers.iniSectionsName_tekken7, Pointers.iniSectionT7Keys_autostart))
             {
-                isChecked = INI.ReadINI("tekken7", "autostart").ToLower();
+                isChecked = INI.ReadINI(Pointers.iniSectionsName_tekken7, Pointers.iniSectionT7Keys_autostart).ToLower();
             }
             T7Autostart = isChecked.Equals("true");
 
             isChecked = ConfigurationManager.AppSettings.Get("defaultTekkenRestartOnload").ToLower();
-            if (INI.KeyExists("tekken7", "restartonload"))
+            if (INI.KeyExists(Pointers.iniSectionsName_tekken7, Pointers.iniSectionT7Keys_restartonload))
             {
-                isChecked = INI.ReadINI("tekken7", "restartonload").ToLower();
+                isChecked = INI.ReadINI(Pointers.iniSectionsName_tekken7, Pointers.iniSectionT7Keys_restartonload).ToLower();
             }
             T7RestartOnload = isChecked.Equals("true");
 
             isChecked = ConfigurationManager.AppSettings.Get("defaultTekkenCloseOnExit").ToLower();
-            if (INI.KeyExists("tekken7", "closeonexit"))
+            if (INI.KeyExists(Pointers.iniSectionsName_tekken7, Pointers.iniSectionT7Keys_closeonexit))
             {
-                isChecked = INI.ReadINI("tekken7", "closeonexit").ToLower();
+                isChecked = INI.ReadINI(Pointers.iniSectionsName_tekken7, Pointers.iniSectionT7Keys_closeonexit).ToLower();
             }
             T7CloseOnExit = isChecked.Equals("true");
 
-            T7DefaultSavepath = INI.ReadINI("path", "tekkenDefaultSavepath");
+            T7DefaultSavepath = INI.ReadINI(Pointers.iniSectionsName_path, Pointers.iniSectionT7Keys_tekkenDefaultSavepath);
             T7PlayerID = INI.ReadINI("player", "id");
         }
         //получаем изображение из ресурсов
@@ -615,11 +618,12 @@ namespace SniperManagerApp
         {
 
             ClientSize = new System.Drawing.Size(int.Parse(ConfigurationManager.AppSettings.Get("mainWindowWidth")), int.Parse(ConfigurationManager.AppSettings.Get("mainWindowHeight")));
-            IniFiles INI = new IniFiles(ConfigurationManager.AppSettings.Get("iniPath"));
+            InitializeINIParameters();
+            /*IniFiles INI = new IniFiles(ConfigurationManager.AppSettings.Get("iniPath"));
             if (!INI.KeyExists("path", "tekkenDefaultSavepath"))
             {
                 INI.Write("path", "tekkenDefaultSavepath", Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "TekkenGame\\Saved\\SaveGames\\TEKKEN7\\"));
-            }
+            }*/
 
             //Заполняем список персонажей на вкладке сохранений
             FillCharacters_Save();
@@ -638,9 +642,7 @@ namespace SniperManagerApp
         private void bindLVtoCB(object e)
         {
             System.Windows.Forms.ListView sender = e as System.Windows.Forms.ListView;
-            //int cb = 0;
 
-            //bool fillRank = false;
             if (sender.SelectedItems.Count > 0)
             {
                 if (sender.Name.Contains("haracter"))
@@ -724,11 +726,6 @@ namespace SniperManagerApp
             pathsForm.ShowDialog();
         }
 
-        private void MenuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-        {
-
-        }
-
         private void btnSave_Click(object sender, EventArgs e)
         {
             string dest = Path.Combine(defaultSavesPath, T7PlayerID, lvCharactersSave.SelectedItems[0].ToolTipText, (lvRanksSave.SelectedItems[0].Index + 1).ToString());
@@ -809,20 +806,7 @@ namespace SniperManagerApp
                     StartMainThread();
                     break;
                 case 4:
-                    /*int index = 0;string str = "";
-                    foreach(string rank in Pointers.ALL_PLAYABLE_RANKS)
-                    {
-                        str+="{ \""+ rank+"\", 0x" +Pointers.ALL_PLAYABLE_RANKS_MEMORY_IMPLIMENTATION[index++].ToString("X")+" },";
-                    }
-                    textBox1.Text = str;*/
-
                     GetPlayerInfo();
-                    //ProcessMemory.Attach(Pointers.TEKKEN_EXE_NAME);
-                    //tekkenModulePointer = ProcessMemory.GetModuleAddress(Pointers.TEKKEN_MODULE_NAME);
-                    //tbT7StartMemoryPointer.Text = tekkenModulePointer.ToString();
-                    //long x = BitConverter.ToInt64(new byte[] { 0x20, 0x30, 0x91, 0x98, 0xEA, 0x01, 0x00, 0x00 },0);
-                    //byte[] x = BitConverter.GetBytes(0x1EA93E04964);
-                    //tbT7StartMemoryPointer.Text= ProcessMemory.GetDynamicAddress(tekkenModulePointer + Pointers.PLAYER_NAME_STATIC_POINTER,Pointers.PLAYER_NAME_POINTER_OFFSETS).ToString();
                     break;
             }
         }
@@ -996,7 +980,7 @@ namespace SniperManagerApp
         {
             IniFiles INI = new IniFiles(ConfigurationManager.AppSettings.Get("iniPath"));
 
-            INI.Write("tekken7","autostart", tsmiT7Autostart.Checked.ToString());
+            INI.Write(Pointers.iniSectionsName_tekken7, Pointers.iniSectionT7Keys_autostart, tsmiT7Autostart.Checked.ToString());
             T7Autostart = tsmiT7Autostart.Checked;
         }
 
@@ -1004,7 +988,7 @@ namespace SniperManagerApp
         {
             IniFiles INI = new IniFiles(ConfigurationManager.AppSettings.Get("iniPath"));
 
-            INI.Write("tekken7", "restartonload", tsmiT7RestartOnload.Checked.ToString());
+            INI.Write(Pointers.iniSectionsName_tekken7, Pointers.iniSectionT7Keys_restartonload, tsmiT7RestartOnload.Checked.ToString());
             T7RestartOnload = tsmiT7RestartOnload.Checked;
         }
 
@@ -1012,7 +996,7 @@ namespace SniperManagerApp
         {
             IniFiles INI = new IniFiles(ConfigurationManager.AppSettings.Get("iniPath"));
 
-            INI.Write("tekken7", "closeonexit", tsmiT7CloseOnExit.Checked.ToString());
+            INI.Write(Pointers.iniSectionsName_tekken7, Pointers.iniSectionT7Keys_closeonexit, tsmiT7CloseOnExit.Checked.ToString());
             T7CloseOnExit = tsmiT7CloseOnExit.Checked;
         }
 
@@ -1044,12 +1028,6 @@ namespace SniperManagerApp
             showTargetsList.ShowDialog();
         }
 
-        private void bT7MemoryGet_Click(object sender, EventArgs e)
-        {
-            ManualInfoEdit.ApplyPreset();
-        }
-       
-        
         private void lvCharactersList_MouseUp(object sender, MouseEventArgs e)
         {
             if (FormToGui.ManualMemoryIsSelectedCharacter())
@@ -1064,23 +1042,11 @@ namespace SniperManagerApp
         
         private void GetPlayerInfo()
         {
-            /*
-            string[] strs = new string[] { "BD0FA4CC","7C1F48F1","FF3E908B","B7EB3EB8","D1AEFB5E","F276DD83","CDEDBA40","2B73BB39","DF3E90AB","25C2EDD0","56D77D26","F1AEFB7E","D276DDA3","ACDB75D8","C733B799","0FB7EB89","38F78194","B4751F04","54751FE4","98F78134","2499DBBC","79F24011","0B63BB09","A5D7ED45","6FABEBF5","53F5EE92","6748B742","587F817C","90D5F768","537BEE1C","FFE39056","535FEE38","7CF1481F","42FBE784","53F5EE92","AC957596","2E08DF23" };
-            string[] newstrs = new string[strs.Length];
-            int index = 0;
-
-            foreach(string str in strs)
-            {
-                newstrs[index++] = str[6].ToString()+ str[7]+ str[4] + str[5] + str[2] + str[3] + str[0] + str[1];
-            }
-            foreach(string str in newstrs)
-            {
-                textBox1.Text += "0x"+str+',';
-            }*/
+           
             if (!ProcessMemory.Attach(Pointers.TEKKEN_EXE_NAME)) return;
 
-            /*if(tekkenModulePointer==0)*/ tekkenModulePointer = ProcessMemory.GetModuleAddress(Pointers.TEKKEN_MODULE_NAME);
-            /*if(tekkenPlayerNameMemoryPointer==0)*/ tekkenPlayerNameMemoryPointer = ProcessMemory.GetDynamicAddress(tekkenModulePointer + Pointers.PLAYER_NAME_STATIC_POINTER, Pointers.PLAYER_NAME_POINTER_OFFSETS);
+            tekkenModulePointer = ProcessMemory.GetModuleAddress(Pointers.TEKKEN_MODULE_NAME);
+            tekkenPlayerNameMemoryPointer = ProcessMemory.GetDynamicAddress(tekkenModulePointer + Pointers.PLAYER_NAME_STATIC_POINTER, Pointers.PLAYER_NAME_POINTER_OFFSETS);
 
             ManualInfoEdit.PrintPlayerName();
             ManualInfoEdit.PrintPlayerSteamID();
@@ -1089,6 +1055,7 @@ namespace SniperManagerApp
 
 
             //ManualInfoEdit.FindedNewDecimal((ulong)HaradaConverter.T7ToHarada(1), "");
+            tbTest.Text = HaradaConverter.T7ToHarada(6).ToString();
             //tbTest.Text= HaradaConverter.T7ToNormal(0x641F75D4).ToString();
         }
         private void btnApply_Click(object sender, EventArgs e)

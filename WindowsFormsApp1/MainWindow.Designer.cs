@@ -30,15 +30,15 @@
         {
             System.Windows.Forms.Button btnSave;
             System.Windows.Forms.Button btnLoad;
-            System.Windows.Forms.ListViewItem listViewItem7 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem12 = new System.Windows.Forms.ListViewItem(new string[] {
             ""}, -1, System.Drawing.Color.Empty, System.Drawing.Color.Empty, new System.Drawing.Font("Microsoft Sans Serif", 1F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204))));
-            System.Windows.Forms.ListViewItem listViewItem8 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem13 = new System.Windows.Forms.ListViewItem(new string[] {
             ""}, -1, System.Drawing.Color.Empty, System.Drawing.Color.Empty, new System.Drawing.Font("Microsoft Sans Serif", 1F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204))));
-            System.Windows.Forms.ListViewItem listViewItem9 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem14 = new System.Windows.Forms.ListViewItem(new string[] {
             ""}, -1, System.Drawing.Color.Empty, System.Drawing.Color.Empty, new System.Drawing.Font("Microsoft Sans Serif", 1F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204))));
-            System.Windows.Forms.ListViewItem listViewItem10 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem15 = new System.Windows.Forms.ListViewItem(new string[] {
             ""}, -1, System.Drawing.Color.Empty, System.Drawing.Color.Empty, new System.Drawing.Font("Microsoft Sans Serif", 1F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204))));
-            System.Windows.Forms.ListViewItem listViewItem6 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem11 = new System.Windows.Forms.ListViewItem(new string[] {
             ""}, -1, System.Drawing.Color.Empty, System.Drawing.Color.Empty, new System.Drawing.Font("Microsoft Sans Serif", 1F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204))));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.tsmiSetteings = new System.Windows.Forms.ToolStripMenuItem();
@@ -82,6 +82,8 @@
             this.chbCharacterSubstitution = new System.Windows.Forms.CheckBox();
             this.btnApply = new System.Windows.Forms.Button();
             this.gbCharacterInfo = new System.Windows.Forms.GroupBox();
+            this.tbManualMemoryWinstreak = new System.Windows.Forms.TextBox();
+            this.tbManualMemoryCurrentWins = new System.Windows.Forms.TextBox();
             this.cbManualMemoryELOLine = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -137,8 +139,6 @@
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.bT7Preset = new System.Windows.Forms.Button();
             this.pbMain = new System.Windows.Forms.ProgressBar();
-            this.tbManualMemoryCurrentWins = new System.Windows.Forms.TextBox();
-            this.tbManualMemoryWinstreak = new System.Windows.Forms.TextBox();
             btnSave = new System.Windows.Forms.Button();
             btnLoad = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
@@ -206,7 +206,6 @@
             this.menuStrip1.Size = new System.Drawing.Size(687, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
-            this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.MenuStrip1_ItemClicked);
             // 
             // tsmiSetteings
             // 
@@ -348,7 +347,7 @@
             this.lvRanksSave.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None;
             this.lvRanksSave.HideSelection = false;
             this.lvRanksSave.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem7});
+            listViewItem12});
             this.lvRanksSave.Location = new System.Drawing.Point(396, 30);
             this.lvRanksSave.Margin = new System.Windows.Forms.Padding(0);
             this.lvRanksSave.MultiSelect = false;
@@ -387,7 +386,7 @@
             this.lvCharactersSave.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None;
             this.lvCharactersSave.HideSelection = false;
             this.lvCharactersSave.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem8});
+            listViewItem13});
             this.lvCharactersSave.Location = new System.Drawing.Point(5, 30);
             this.lvCharactersSave.Margin = new System.Windows.Forms.Padding(0);
             this.lvCharactersSave.MultiSelect = false;
@@ -442,7 +441,7 @@
             this.lvRanksLoad.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None;
             this.lvRanksLoad.HideSelection = false;
             this.lvRanksLoad.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem9});
+            listViewItem14});
             this.lvRanksLoad.Location = new System.Drawing.Point(396, 30);
             this.lvRanksLoad.Margin = new System.Windows.Forms.Padding(0);
             this.lvRanksLoad.MultiSelect = false;
@@ -481,7 +480,7 @@
             this.lvCharactersLoad.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None;
             this.lvCharactersLoad.HideSelection = false;
             this.lvCharactersLoad.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem10});
+            listViewItem15});
             this.lvCharactersLoad.Location = new System.Drawing.Point(5, 30);
             this.lvCharactersLoad.Margin = new System.Windows.Forms.Padding(0);
             this.lvCharactersLoad.MultiSelect = false;
@@ -708,15 +707,30 @@
             this.gbCharacterInfo.Text = "Информация о персонаже";
             this.gbCharacterInfo.Visible = false;
             // 
+            // tbManualMemoryWinstreak
+            // 
+            this.tbManualMemoryWinstreak.Location = new System.Drawing.Point(178, 74);
+            this.tbManualMemoryWinstreak.Name = "tbManualMemoryWinstreak";
+            this.tbManualMemoryWinstreak.Size = new System.Drawing.Size(66, 20);
+            this.tbManualMemoryWinstreak.TabIndex = 59;
+            // 
+            // tbManualMemoryCurrentWins
+            // 
+            this.tbManualMemoryCurrentWins.Location = new System.Drawing.Point(178, 47);
+            this.tbManualMemoryCurrentWins.Name = "tbManualMemoryCurrentWins";
+            this.tbManualMemoryCurrentWins.Size = new System.Drawing.Size(66, 20);
+            this.tbManualMemoryCurrentWins.TabIndex = 58;
+            // 
             // cbManualMemoryELOLine
             // 
             this.cbManualMemoryELOLine.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cbManualMemoryELOLine.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cbManualMemoryELOLine.FormattingEnabled = true;
             this.cbManualMemoryELOLine.Items.AddRange(new object[] {
+            "Не менять",
+            "Понижение",
             "0",
-            "Повышение",
-            "Понижение"});
+            "Повышение"});
             this.cbManualMemoryELOLine.Location = new System.Drawing.Point(123, 101);
             this.cbManualMemoryELOLine.Name = "cbManualMemoryELOLine";
             this.cbManualMemoryELOLine.Size = new System.Drawing.Size(121, 21);
@@ -1264,7 +1278,7 @@
             this.lvManualMemoryCharactersList.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None;
             this.lvManualMemoryCharactersList.HideSelection = false;
             this.lvManualMemoryCharactersList.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem6});
+            listViewItem11});
             this.lvManualMemoryCharactersList.Location = new System.Drawing.Point(0, 0);
             this.lvManualMemoryCharactersList.Margin = new System.Windows.Forms.Padding(0);
             this.lvManualMemoryCharactersList.MultiSelect = false;
@@ -1288,7 +1302,6 @@
             this.bT7Preset.TabIndex = 0;
             this.bT7Preset.Text = "Пресет";
             this.bT7Preset.UseVisualStyleBackColor = true;
-            this.bT7Preset.Click += new System.EventHandler(this.bT7MemoryGet_Click);
             // 
             // pbMain
             // 
@@ -1298,20 +1311,6 @@
             this.pbMain.Name = "pbMain";
             this.pbMain.Size = new System.Drawing.Size(670, 20);
             this.pbMain.TabIndex = 2;
-            // 
-            // tbManualMemoryCurrentWins
-            // 
-            this.tbManualMemoryCurrentWins.Location = new System.Drawing.Point(178, 47);
-            this.tbManualMemoryCurrentWins.Name = "tbManualMemoryCurrentWins";
-            this.tbManualMemoryCurrentWins.Size = new System.Drawing.Size(66, 20);
-            this.tbManualMemoryCurrentWins.TabIndex = 58;
-            // 
-            // tbManualMemoryWinstreak
-            // 
-            this.tbManualMemoryWinstreak.Location = new System.Drawing.Point(178, 74);
-            this.tbManualMemoryWinstreak.Name = "tbManualMemoryWinstreak";
-            this.tbManualMemoryWinstreak.Size = new System.Drawing.Size(66, 20);
-            this.tbManualMemoryWinstreak.TabIndex = 59;
             // 
             // MainWindow
             // 
